@@ -17,6 +17,8 @@
 		A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AE54A023FDC7DD00D3D361 /* LaunchScreen.storyboard */; };
 		A8AE54AD23FDC7DD00D3D361 /* MVVMCMarvelCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE54AC23FDC7DD00D3D361 /* MVVMCMarvelCharactersTests.swift */; };
 		A8AE54B823FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE54B723FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift */; };
+		A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */; };
+		A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */; };
 		F3EACBF1E010C6D3848808FC /* Pods_MVVMCMarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		A8AE54B323FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCMarvelCharactersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AE54B723FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCMarvelCharactersUITests.swift; sourceTree = "<group>"; };
 		A8AE54B923FDC7DD00D3D361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C4A78119E4F132D304F5539F /* Pods-MVVMCMarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
 		CC0FBCE4BD5A92E71A2E9147 /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1216826112F4A260F90FDB /* Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B5F68923FDC88200CDC5B4 /* App */,
+				A8B5F68A23FDC9B800CDC5B4 /* Modules */,
 				A8AE549923FDC7D900D3D361 /* ViewController.swift */,
 				A8AE549B23FDC7D900D3D361 /* Main.storyboard */,
 			);
@@ -172,8 +177,25 @@
 				A8AE54A323FDC7DD00D3D361 /* Info.plist */,
 				A8AE549523FDC7D900D3D361 /* AppDelegate.swift */,
 				A8AE549723FDC7D900D3D361 /* SceneDelegate.swift */,
+				A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		A8B5F68A23FDC9B800CDC5B4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5F68D23FDC9D900CDC5B4 /* Base */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A8B5F68D23FDC9D900CDC5B4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */,
 				A8AE549A23FDC7D900D3D361 /* ViewController.swift in Sources */,
+				A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */,
 				A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */,
 				A8AE549823FDC7D900D3D361 /* SceneDelegate.swift in Sources */,
 			);
