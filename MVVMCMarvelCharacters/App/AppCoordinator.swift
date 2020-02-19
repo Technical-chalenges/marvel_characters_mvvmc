@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class AppCoordinator: Coordinator {
+    fileprivate let charactersC_KEY = "Characters"
+    
     var window: UIWindow
+    var coordinators = [String:Coordinator]()
     
     init(window: UIWindow) {
         self.window = window
@@ -23,5 +26,8 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator {
     func showCharacters() {
+        let charactersC = CharactersCoordinator(window: window)
+        coordinators[charactersC_KEY] = charactersC
+        charactersC.start()
     }
 }
