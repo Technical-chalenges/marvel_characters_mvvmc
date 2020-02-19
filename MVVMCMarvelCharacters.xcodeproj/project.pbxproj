@@ -139,7 +139,7 @@
 		A8AE549423FDC7D900D3D361 /* MVVMCMarvelCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				A8B5F68923FDC88200CDC5B4 /* Common */,
+				A8B5F68923FDC88200CDC5B4 /* App */,
 				A8AE549923FDC7D900D3D361 /* ViewController.swift */,
 				A8AE549B23FDC7D900D3D361 /* Main.storyboard */,
 			);
@@ -164,7 +164,7 @@
 			path = MVVMCMarvelCharactersUITests;
 			sourceTree = "<group>";
 		};
-		A8B5F68923FDC88200CDC5B4 /* Common */ = {
+		A8B5F68923FDC88200CDC5B4 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				A8AE549E23FDC7DD00D3D361 /* Assets.xcassets */,
@@ -173,7 +173,7 @@
 				A8AE549523FDC7D900D3D361 /* AppDelegate.swift */,
 				A8AE549723FDC7D900D3D361 /* SceneDelegate.swift */,
 			);
-			path = Common;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -592,7 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MVVMCMarvelCharacters/Common/Info.plist;
+				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MVVMCMarvelCharacters/Common/Info.plist;
+				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
