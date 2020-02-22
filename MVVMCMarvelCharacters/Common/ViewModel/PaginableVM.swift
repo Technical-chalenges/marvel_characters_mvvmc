@@ -31,7 +31,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
         if let totalSize = totalSize, totalSize >= items.count {
-            paginableViewDelegate?.loadingFinished()
+            paginableViewDelegate?.itemsDidLoad()
             return
         }
         
@@ -50,7 +50,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
             }
             
             self.isLoading = false
-            self.paginableViewDelegate?.loadingFinished()
+            self.paginableViewDelegate?.itemsDidLoad()
         }
     }
 }

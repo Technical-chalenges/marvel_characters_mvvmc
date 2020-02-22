@@ -29,7 +29,7 @@ class CharactersVC: ControllerVC, Storyboarded {
 }
 
 extension CharactersVC: PaginableViewDelegate {
-    func loadingFinished() {
+    func itemsDidLoad() {
         guard let vm = viewModel as? CharactersVM else { return }
         dataSource = TableViewDataSource(models: vm.items, reuseIdentifier: CharacterCell.identifier) { (character, cell) in
             guard let characterCell = cell as? CharacterCell else { return }

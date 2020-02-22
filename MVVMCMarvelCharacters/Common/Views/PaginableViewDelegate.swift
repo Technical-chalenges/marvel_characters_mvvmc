@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PaginableViewDelegate: AnyObject {
-    func loadingFinished()
+    func itemsDidLoad()
 }
