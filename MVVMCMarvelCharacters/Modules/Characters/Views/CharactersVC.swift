@@ -20,8 +20,16 @@ class CharactersVC: UIViewController, Storyboarded {
     @IBOutlet weak var tableView: UITableView!
     var dataSource: CharactersDataSource!
     
+    private var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl.addTarget(self, action: #selector(refreshCharacters(_:)), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         initByViewModel()
     }
     
@@ -32,10 +40,15 @@ class CharactersVC: UIViewController, Storyboarded {
         title = viewModel.title
         viewModel.reloadCharacters()
     }
+    
+    @objc private func refreshCharacters(_ sender: Any) {
+        viewModel?.reloadCharacters()
+    }
 }
 
 extension CharactersVC: PaginableViewDelegate {
     func itemsDidLoad() {
+        refreshControl.endRefreshing()
         tableView.reloadData()
     }
 }
