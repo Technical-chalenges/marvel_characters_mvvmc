@@ -18,7 +18,8 @@ class CharactersVC: UIViewController, Storyboarded {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    var dataSource: CharactersDataSource!
+    var tableViewDataSource: CharactersDataSource!
+    var tableViewDelegate: InfiniteViewDelegate!
     
     private var refreshControl = UIRefreshControl()
     
@@ -35,10 +36,14 @@ class CharactersVC: UIViewController, Storyboarded {
     
     func initByViewModel() {
         guard let viewModel = viewModel, let tableView = tableView else { return }
-        dataSource = CharactersDataSource(viewModel: viewModel)
-        dataSource.configure(tableView)
         title = viewModel.title
-        viewModel.reloadCharacters()
+        
+        tableViewDataSource = CharactersDataSource(viewModel: viewModel)
+        tableViewDataSource.configure(tableView)
+        
+        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
+        tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
+        tableViewDelegate.configure(tableView: tableView)
     }
     
     @objc private func refreshCharacters(_ sender: Any) {
