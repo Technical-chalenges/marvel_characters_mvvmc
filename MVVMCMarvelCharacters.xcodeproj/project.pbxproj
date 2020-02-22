@@ -34,6 +34,9 @@
 		A87EF16623FFEBE100C71ED8 /* PaginableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16523FFEBE100C71ED8 /* PaginableVM.swift */; };
 		A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */; };
 		A87EF16A23FFF44A00C71ED8 /* CharactersSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16923FFF44A00C71ED8 /* CharactersSP.swift */; };
+		A87EF16C24000B4F00C71ED8 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */; };
+		A87EF16E240013B100C71ED8 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16D240013B100C71ED8 /* CharacterCell.swift */; };
+		A87EF171240013E800C71ED8 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF170240013E800C71ED8 /* UITableViewCell.swift */; };
 		A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE549523FDC7D900D3D361 /* AppDelegate.swift */; };
 		A8AE549823FDC7D900D3D361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE549723FDC7D900D3D361 /* SceneDelegate.swift */; };
 		A8AE549A23FDC7D900D3D361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE549923FDC7D900D3D361 /* ViewController.swift */; };
@@ -105,6 +108,9 @@
 		A87EF16523FFEBE100C71ED8 /* PaginableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableVM.swift; sourceTree = "<group>"; };
 		A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableViewDelegate.swift; sourceTree = "<group>"; };
 		A87EF16923FFF44A00C71ED8 /* CharactersSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSP.swift; sourceTree = "<group>"; };
+		A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		A87EF16D240013B100C71ED8 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		A87EF170240013E800C71ED8 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		A8AE549223FDC7D900D3D361 /* MVVMCMarvelCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCMarvelCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AE549523FDC7D900D3D361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8AE549723FDC7D900D3D361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 		A83D258A23FF2F970086ED13 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A87EF16F240013CB00C71ED8 /* Extensions */,
 				A83D258B23FF2F970086ED13 /* Errors */,
 				A8B5F69C23FDD91F00CDC5B4 /* Coordinators */,
 				A83D258723FF2DA50086ED13 /* Services */,
@@ -265,6 +272,7 @@
 				A87EF15D23FF434900C71ED8 /* ViewDelegate.swift */,
 				A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */,
 				A87EF15623FF38BD00C71ED8 /* ControllerVC.swift */,
+				A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +286,14 @@
 				A87EF16523FFEBE100C71ED8 /* PaginableVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A87EF16F240013CB00C71ED8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A87EF170240013E800C71ED8 /* UITableViewCell.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A8AE548923FDC7D900D3D361 = {
@@ -391,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				A8DD036623FDDAAB00F2AD10 /* CharactersVC.swift */,
+				A87EF16D240013B100C71ED8 /* CharacterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -677,6 +694,7 @@
 				A83D259523FF30430086ED13 /* Image.swift in Sources */,
 				A87EF16423FFEB6E00C71ED8 /* PaginableVMP.swift in Sources */,
 				A87EF15C23FF396C00C71ED8 /* BaseVMP.swift in Sources */,
+				A87EF171240013E800C71ED8 /* UITableViewCell.swift in Sources */,
 				A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */,
 				A83D258123FF2C6A0086ED13 /* API.swift in Sources */,
 				A8DD036D23FDDD0100F2AD10 /* AppStoryboard.swift in Sources */,
@@ -690,6 +708,7 @@
 				A83D259423FF30430086ED13 /* DataContainer.swift in Sources */,
 				A8DD036A23FDDCD000F2AD10 /* Storyboarded.swift in Sources */,
 				A87EF14D23FF32C800C71ED8 /* Comic.swift in Sources */,
+				A87EF16C24000B4F00C71ED8 /* TableViewDataSource.swift in Sources */,
 				A87EF15E23FF434900C71ED8 /* ViewDelegate.swift in Sources */,
 				A87EF16223FF443100C71ED8 /* BaseVM.swift in Sources */,
 				A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */,
@@ -700,6 +719,7 @@
 				A8DD039523FF1E0000F2AD10 /* Environment.swift in Sources */,
 				A87EF14E23FF32C800C71ED8 /* SeriesList.swift in Sources */,
 				A87EF16623FFEBE100C71ED8 /* PaginableVM.swift in Sources */,
+				A87EF16E240013B100C71ED8 /* CharacterCell.swift in Sources */,
 				A83D258E23FF2F970086ED13 /* ConfigureError.swift in Sources */,
 				A87EF16A23FFF44A00C71ED8 /* CharactersSP.swift in Sources */,
 				A87EF14323FF323200C71ED8 /* CharactersService.swift in Sources */,
