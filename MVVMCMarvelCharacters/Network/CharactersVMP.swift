@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol CharactersVMP: PaginableVMP {
-    var service: CharactersSP? { get set }
+protocol CharactersVMP: BaseVMP {
+    var service: CharactersSP { get }
+    var items: [Character] { get }
     func loadCharacters()
     func reloadCharacters()
 }

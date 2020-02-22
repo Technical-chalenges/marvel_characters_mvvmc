@@ -8,35 +8,34 @@
 
 import UIKit
 
-class CharactersVC: ControllerVC, Storyboarded {
+class CharactersVC: UIViewController, Storyboarded {
     static var storyboard = AppStoryboard.characters
     
-    @IBOutlet weak var tableView: UITableView!
+    var viewModel: CharactersVMP? {
+        didSet {
+            initByViewModel()
+        }
+    }
     
-    var dataSource: UITableViewDataSource?
+    @IBOutlet weak var tableView: UITableView!
+    var dataSource: CharactersDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        initByViewModel()
     }
     
-    override func initByViewModel(with vm: BaseVMP?) {
-        super.initByViewModel(with: vm)
-        guard let vm = vm as? CharactersVM else { return }
-        vm.reloadCharacters()
+    func initByViewModel() {
+        guard let viewModel = viewModel, let tableView = tableView else { return }
+        dataSource = CharactersDataSource(viewModel: viewModel)
+        dataSource.configure(tableView)
+        title = viewModel.title
+        viewModel.reloadCharacters()
     }
 }
 
 extension CharactersVC: PaginableViewDelegate {
     func itemsDidLoad() {
-        guard let vm = viewModel as? CharactersVM else { return }
-        dataSource = TableViewDataSource(models: vm.items, reuseIdentifier: CharacterCell.identifier) { (character, cell) in
-            guard let characterCell = cell as? CharacterCell else { return }
-            characterCell.configure(character: character)
-        }
-        
-        tableView.dataSource = dataSource
         tableView.reloadData()
     }
 }

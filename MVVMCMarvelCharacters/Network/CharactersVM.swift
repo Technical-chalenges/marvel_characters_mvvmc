@@ -9,10 +9,14 @@
 import Foundation
 
 class CharactersVM: PaginableVM<Character>, CharactersVMP {
-    var service: CharactersSP?
+    var service: CharactersSP
     
     override var title: String {
         "Characters"
+    }
+    
+    init(service: CharactersSP) {
+        self.service = service
     }
     
     func loadCharacters() {
@@ -24,6 +28,6 @@ class CharactersVM: PaginableVM<Character>, CharactersVMP {
     }
     
     override func loadItems(offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
-        service?.fetchCharacters(offset: offset, limit: limit, completion)
+        service.fetchCharacters(offset: offset, limit: limit, completion)
     }
 }

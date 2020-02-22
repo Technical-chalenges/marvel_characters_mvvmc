@@ -11,12 +11,11 @@ import UIKit
 import Moya
 
 class CharactersCoordinator: Coordinator {
-    var window: UIWindow
-    
-    let apiProvider = MoyaProvider<API>()
-    
-    init(window: UIWindow) {
+    let window: UIWindow
+    let apiProvider: MoyaProvider<API>
+    init(window: UIWindow, apiProvider: MoyaProvider<API>) {
         self.window = window
+        self.apiProvider = apiProvider
     }
     
     func start() {
@@ -24,9 +23,9 @@ class CharactersCoordinator: Coordinator {
     }
     
     func showCharacters() {
-        let charactersVM = CharactersVM()
+        let characterService = CharactersService(provider: apiProvider)
+        let charactersVM = CharactersVM(service: characterService)
         charactersVM.coordinatorDelegate = self
-        charactersVM.service = CharactersService(provider: apiProvider)
         
         let charactersVC = CharactersVC.instantiate()
         charactersVC.viewModel = charactersVM

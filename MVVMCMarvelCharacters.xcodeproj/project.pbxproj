@@ -34,7 +34,6 @@
 		A87EF16623FFEBE100C71ED8 /* PaginableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16523FFEBE100C71ED8 /* PaginableVM.swift */; };
 		A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */; };
 		A87EF16A23FFF44A00C71ED8 /* CharactersSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16923FFF44A00C71ED8 /* CharactersSP.swift */; };
-		A87EF16C24000B4F00C71ED8 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */; };
 		A87EF16E240013B100C71ED8 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16D240013B100C71ED8 /* CharacterCell.swift */; };
 		A87EF171240013E800C71ED8 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF170240013E800C71ED8 /* UITableViewCell.swift */; };
 		A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE549523FDC7D900D3D361 /* AppDelegate.swift */; };
@@ -49,6 +48,7 @@
 		A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */; };
 		A8B5F69523FDCD3C00CDC5B4 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B5F69423FDCD3C00CDC5B4 /* Characters.storyboard */; };
 		A8B5F69723FDD4A800CDC5B4 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */; };
+		A8BA82E52401696100710080 /* CharactersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82E42401696100710080 /* CharactersDataSource.swift */; };
 		A8DD036723FDDAAB00F2AD10 /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD036623FDDAAB00F2AD10 /* CharactersVC.swift */; };
 		A8DD036A23FDDCD000F2AD10 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD036923FDDCD000F2AD10 /* Storyboarded.swift */; };
 		A8DD036D23FDDD0100F2AD10 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD036C23FDDD0100F2AD10 /* AppStoryboard.swift */; };
@@ -108,7 +108,6 @@
 		A87EF16523FFEBE100C71ED8 /* PaginableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableVM.swift; sourceTree = "<group>"; };
 		A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableViewDelegate.swift; sourceTree = "<group>"; };
 		A87EF16923FFF44A00C71ED8 /* CharactersSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSP.swift; sourceTree = "<group>"; };
-		A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		A87EF16D240013B100C71ED8 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		A87EF170240013E800C71ED8 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		A8AE549223FDC7D900D3D361 /* MVVMCMarvelCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCMarvelCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +128,7 @@
 		A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A8B5F69423FDCD3C00CDC5B4 /* Characters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
+		A8BA82E42401696100710080 /* CharactersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataSource.swift; sourceTree = "<group>"; };
 		A8DD036623FDDAAB00F2AD10 /* CharactersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVC.swift; sourceTree = "<group>"; };
 		A8DD036923FDDCD000F2AD10 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A8DD036C23FDDD0100F2AD10 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 		A87EF15023FF33FD00C71ED8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A87EF15123FF342200C71ED8 /* CharactersVM.swift */,
 				A87EF15323FF345200C71ED8 /* CharactersVMP.swift */,
+				A87EF15123FF342200C71ED8 /* CharactersVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,7 +272,6 @@
 				A87EF15D23FF434900C71ED8 /* ViewDelegate.swift */,
 				A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */,
 				A87EF15623FF38BD00C71ED8 /* ControllerVC.swift */,
-				A87EF16B24000B4F00C71ED8 /* TableViewDataSource.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				A8DD036623FDDAAB00F2AD10 /* CharactersVC.swift */,
+				A8BA82E42401696100710080 /* CharactersDataSource.swift */,
 				A87EF16D240013B100C71ED8 /* CharacterCell.swift */,
 			);
 			path = Views;
@@ -697,6 +697,7 @@
 				A87EF171240013E800C71ED8 /* UITableViewCell.swift in Sources */,
 				A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */,
 				A83D258123FF2C6A0086ED13 /* API.swift in Sources */,
+				A8BA82E52401696100710080 /* CharactersDataSource.swift in Sources */,
 				A8DD036D23FDDD0100F2AD10 /* AppStoryboard.swift in Sources */,
 				A8B5F69723FDD4A800CDC5B4 /* CharactersCoordinator.swift in Sources */,
 				A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */,
@@ -708,7 +709,6 @@
 				A83D259423FF30430086ED13 /* DataContainer.swift in Sources */,
 				A8DD036A23FDDCD000F2AD10 /* Storyboarded.swift in Sources */,
 				A87EF14D23FF32C800C71ED8 /* Comic.swift in Sources */,
-				A87EF16C24000B4F00C71ED8 /* TableViewDataSource.swift in Sources */,
 				A87EF15E23FF434900C71ED8 /* ViewDelegate.swift in Sources */,
 				A87EF16223FF443100C71ED8 /* BaseVM.swift in Sources */,
 				A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */,

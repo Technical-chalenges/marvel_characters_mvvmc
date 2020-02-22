@@ -6,13 +6,14 @@
 //  Copyright © 2020 Alexandr. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Moya
 
 class AppCoordinator: Coordinator {
     fileprivate let charactersC_KEY = "Characters"
     
     var window: UIWindow
+    let apiProvider = MoyaProvider<API>()
     var coordinators = [String:Coordinator]()
     
     init(window: UIWindow) {
@@ -26,7 +27,7 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator {
     func showCharacters() {
-        let charactersC = CharactersCoordinator(window: window)
+        let charactersC = CharactersCoordinator(window: window, apiProvider: apiProvider)
         coordinators[charactersC_KEY] = charactersC
         charactersC.start()
     }
