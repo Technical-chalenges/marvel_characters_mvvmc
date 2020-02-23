@@ -10,17 +10,10 @@ import UIKit
 
 class CharactersVC: UIViewController, Storyboarded {
     static var storyboard = AppStoryboard.characters
-    
-    var viewModel: CharactersVMP? {
-        didSet {
-            initByViewModel()
-        }
-    }
-    
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: CharactersVMP!
     var tableViewDataSource: CharactersDataSource!
     var tableViewDelegate: InfiniteViewDelegate!
-    
     private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -43,7 +36,12 @@ class CharactersVC: UIViewController, Storyboarded {
         
         tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
         tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
+        tableViewDelegate.rowSelectedClosure = showCharacter
         tableViewDelegate.configure(tableView: tableView)
+    }
+    
+    func showCharacter(indexPath: IndexPath) {
+        viewModel.showCharacter(index: indexPath.row)
     }
     
     @objc private func refreshCharacters(_ sender: Any) {

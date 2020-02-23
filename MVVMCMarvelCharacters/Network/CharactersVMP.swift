@@ -13,4 +13,5 @@ protocol CharactersVMP: BaseVMP {
     var items: [Character] { get }
     func loadCharacters()
     func reloadCharacters()
+    func showCharacter(index: Int)
 }

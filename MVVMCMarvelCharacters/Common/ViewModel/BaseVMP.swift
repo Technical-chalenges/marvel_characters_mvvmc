@@ -9,9 +9,6 @@
 import Foundation
 
 protocol BaseVMP {
-    var viewDelegate: ViewDelegate? { get set }
-    var coordinatorDelegate: CoordinatorDelegate? { get set }
-    
     var title: String { get }
     var errorMessage: String? { get }
 }

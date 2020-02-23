@@ -55,6 +55,3 @@ extension InfiniteViewDelegate: UITableViewDelegate {
     }
 }
 
-extension InfiniteViewDelegate: UICollectionViewDelegate {
-}
-

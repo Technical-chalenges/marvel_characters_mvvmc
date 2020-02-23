@@ -13,6 +13,7 @@ import Moya
 class CharactersCoordinator: Coordinator {
     let window: UIWindow
     let apiProvider: MoyaProvider<API>
+    var navigationController: UINavigationController!
     init(window: UIWindow, apiProvider: MoyaProvider<API>) {
         self.window = window
         self.apiProvider = apiProvider
@@ -25,19 +26,23 @@ class CharactersCoordinator: Coordinator {
     func showCharacters() {
         let characterService = CharactersService(provider: apiProvider)
         let charactersVM = CharactersVM(service: characterService)
-        charactersVM.coordinatorDelegate = self
+        charactersVM.charactersCoordinatorDelegate = self
         
         let charactersVC = CharactersVC.instantiate()
         charactersVC.viewModel = charactersVM
         charactersVM.paginableViewDelegate = charactersVC
-        let navigationController =  UINavigationController(rootViewController: charactersVC)
+        navigationController =  UINavigationController(rootViewController: charactersVC)
         window.rootViewController = navigationController
     }
     
-    func showCharacter() {
+    func showCharacter(character: Character) {
+        let charactersCoordinator = CharacterCoordinator(navigationController: navigationController, character: character)
+        charactersCoordinator.start()
     }
 }
 
-extension CharactersCoordinator: CoordinatorDelegate {
-    
+extension CharactersCoordinator: CharactersCoordinatorDelegate {
+    func characterDidSelected(charactersViewModel: CharactersVMP, character: Character) {
+        showCharacter(character: character)
+    }
 }
