@@ -8,18 +8,22 @@
 
 import UIKit
 
-class CharactersViewController: UIViewController {
+class CharactersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: CharactersVMP!
-    var tableViewDataSource: CharactersDataSource!
+    var viewModel: CharactersVMP
+    var tableViewDataSource: CharactersDataSource
     var tableViewDelegate: InfiniteViewDelegate!
     private var refreshControl = UIRefreshControl()
     
     init(viewModel: CharactersVMP) {
         self.viewModel = viewModel
-        self.tableViewDataSource = CharactersDataSource(viewModel: viewModel)
-        super.init(nibName: "CharactersViewController", bundle: nil)
+        tableViewDataSource = CharactersDataSource(viewModel: viewModel)
+        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
+        super.init(nibName: "CharacterVC", bundle: nil)
+        
         self.title = viewModel.title
+        tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
+        tableViewDelegate.rowSelectedClosure = showCharacter
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,32 +38,22 @@ class CharactersViewController: UIViewController {
         } else {
             tableView.addSubview(refreshControl)
         }
-        initByViewModel()
-    }
-    
-    func initByViewModel() {
-        guard let viewModel = viewModel, let tableView = tableView else { return }
-        title = viewModel.title
         
-        tableViewDataSource = CharactersDataSource(viewModel: viewModel)
-        tableViewDataSource.configure(tableView)
-        
-        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
-        tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
-        tableViewDelegate.rowSelectedClosure = showCharacter
+        tableViewDataSource.configure(tableView: tableView)
         tableViewDelegate.configure(tableView: tableView)
     }
     
     func showCharacter(indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         viewModel.showCharacter(index: indexPath.row)
     }
     
     @objc private func refreshCharacters(_ sender: Any) {
-        viewModel?.reloadCharacters()
+        viewModel.reloadCharacters()
     }
 }
 
-extension CharactersViewController: PaginableViewDelegate {
+extension CharactersVC: PaginableViewDelegate {
     func itemsDidLoad() {
         refreshControl.endRefreshing()
         tableView.reloadData()

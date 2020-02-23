@@ -16,7 +16,7 @@ class CharactersDataSource: NSObject {
         self.viewModel = viewModel
     }
     
-    func configure(_ tableView: UITableView) {
+    func configure(tableView: UITableView) {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

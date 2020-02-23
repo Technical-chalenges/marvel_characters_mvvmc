@@ -85,8 +85,8 @@
 		A8F342D22403083500D2DCE9 /* CharacterSeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342D02403083500D2DCE9 /* CharacterSeriesCell.xib */; };
 		A8F342D5240308A500D2DCE9 /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342D3240308A500D2DCE9 /* SeriesCollectionViewCell.swift */; };
 		A8F342D6240308A500D2DCE9 /* SeriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342D4240308A500D2DCE9 /* SeriesCollectionViewCell.xib */; };
-		A8F342D924030A2B00D2DCE9 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342D724030A2B00D2DCE9 /* CharactersViewController.swift */; };
-		A8F342DA24030A2B00D2DCE9 /* CharactersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342D824030A2B00D2DCE9 /* CharactersViewController.xib */; };
+		A8F342D924030A2B00D2DCE9 /* CharactersVС.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342D724030A2B00D2DCE9 /* CharactersVС.swift */; };
+		A8F342DA24030A2B00D2DCE9 /* CharactersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342D824030A2B00D2DCE9 /* CharactersVC.xib */; };
 		A8F342DE24030A8C00D2DCE9 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342DC24030A8C00D2DCE9 /* CharacterCell.swift */; };
 		A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */; };
 		F3EACBF1E010C6D3848808FC /* Pods_MVVMCMarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */; };
@@ -198,8 +198,8 @@
 		A8F342D02403083500D2DCE9 /* CharacterSeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterSeriesCell.xib; sourceTree = "<group>"; };
 		A8F342D3240308A500D2DCE9 /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8F342D4240308A500D2DCE9 /* SeriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCollectionViewCell.xib; sourceTree = "<group>"; };
-		A8F342D724030A2B00D2DCE9 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
-		A8F342D824030A2B00D2DCE9 /* CharactersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersViewController.xib; sourceTree = "<group>"; };
+		A8F342D724030A2B00D2DCE9 /* CharactersVС.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersVС.swift"; sourceTree = "<group>"; };
+		A8F342D824030A2B00D2DCE9 /* CharactersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersVC.xib; sourceTree = "<group>"; };
 		A8F342DC24030A8C00D2DCE9 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		C4A78119E4F132D304F5539F /* Pods-MVVMCMarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
@@ -623,8 +623,8 @@
 			isa = PBXGroup;
 			children = (
 				A8F342DB24030A6900D2DCE9 /* Cells */,
-				A8F342D724030A2B00D2DCE9 /* CharactersViewController.swift */,
-				A8F342D824030A2B00D2DCE9 /* CharactersViewController.xib */,
+				A8F342D724030A2B00D2DCE9 /* CharactersVС.swift */,
+				A8F342D824030A2B00D2DCE9 /* CharactersVC.xib */,
 				A8BA82E42401696100710080 /* CharactersDataSource.swift */,
 			);
 			path = Views;
@@ -802,7 +802,7 @@
 				A8BA83212402A4C100710080 /* CharacterComicsCell.xib in Resources */,
 				A8DD039723FF1E0000F2AD10 /* Development.xcconfig in Resources */,
 				A8BA82F12402779400710080 /* CharacterVC.xib in Resources */,
-				A8F342DA24030A2B00D2DCE9 /* CharactersViewController.xib in Resources */,
+				A8F342DA24030A2B00D2DCE9 /* CharactersVC.xib in Resources */,
 				A8F342D6240308A500D2DCE9 /* SeriesCollectionViewCell.xib in Resources */,
 				A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */,
 				A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */,
@@ -977,7 +977,7 @@
 				A8BA8319240290FF00710080 /* CharacterInfoCell.swift in Sources */,
 				A8BA82F324027A0600710080 /* CharacterDataSource.swift in Sources */,
 				A87EF15423FF345200C71ED8 /* CharactersVMP.swift in Sources */,
-				A8F342D924030A2B00D2DCE9 /* CharactersViewController.swift in Sources */,
+				A8F342D924030A2B00D2DCE9 /* CharactersVС.swift in Sources */,
 				A8BA832E2402F10900710080 /* UICollectionViewCell.swift in Sources */,
 				A87EF15223FF342200C71ED8 /* CharactersVM.swift in Sources */,
 				A8AE549823FDC7D900D3D361 /* SceneDelegate.swift in Sources */,

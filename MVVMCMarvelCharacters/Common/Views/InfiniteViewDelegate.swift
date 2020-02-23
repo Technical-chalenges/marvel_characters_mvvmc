@@ -37,7 +37,6 @@ class InfiniteViewDelegate: NSObject {
 
 extension InfiniteViewDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         rowSelectedClosure?(indexPath)
     }
     
@@ -61,7 +60,6 @@ extension InfiniteViewDelegate: UITableViewDelegate {
 
 extension InfiniteViewDelegate: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         rowSelectedClosure?(indexPath)
     }
 }

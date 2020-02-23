@@ -28,7 +28,7 @@ class CharactersCoordinator: Coordinator {
         let charactersVM = CharactersVM(service: characterService)
         charactersVM.charactersCoordinatorDelegate = self
         
-        let charactersVC = CharactersViewController(viewModel: charactersVM)
+        let charactersVC = CharactersVC(viewModel: charactersVM)
         charactersVC.viewModel = charactersVM
         charactersVM.paginableViewDelegate = charactersVC
         navigationController =  UINavigationController(rootViewController: charactersVC)
@@ -36,7 +36,11 @@ class CharactersCoordinator: Coordinator {
     }
     
     func showCharacter(character: Character) {
-        let charactersCoordinator = CharacterCoordinator(navigationController: navigationController, apiProvider: apiProvider, character: character)
+        let charactersCoordinator = CharacterCoordinator(
+            navigationController: navigationController,
+            apiProvider: apiProvider,
+            character: character)
+        
         charactersCoordinator.start()
     }
 }

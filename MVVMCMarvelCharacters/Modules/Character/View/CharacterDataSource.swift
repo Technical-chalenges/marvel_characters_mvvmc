@@ -17,6 +17,7 @@ class CharacterDataSource: NSObject {
     
     func configure(_ tableView: UITableView) {
         tableView.dataSource = self
+        tableView.allowsSelection = false
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
         tableView.register(CharacterSeriesCell.nib, forCellReuseIdentifier: CharacterSeriesCell.identifier)
