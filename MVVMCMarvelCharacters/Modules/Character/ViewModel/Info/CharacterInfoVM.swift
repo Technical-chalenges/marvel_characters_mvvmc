@@ -9,10 +9,14 @@
 import Foundation
 
 class CharacterInfoVM: CharacterInfoVMP {
+    
     var character: Character
     
     var sectionTitle: String? {
         "characterInfo"
+    }
+    var thumbnail: Image? {
+        character.thumbnail
     }
     
     var name: String? {
@@ -23,12 +27,14 @@ class CharacterInfoVM: CharacterInfoVMP {
         character.description
     }
     
-    var totalComics: Int? {
-        character.comics?.available
+    var totalComics: Int {
+        guard let count = character.comics?.available else { return 0 }
+        return count
     }
     
-    var totalSeries: Int?{
-     character.series?.available
+    var totalSeries: Int{
+        guard let count = character.series?.available else { return 0 }
+        return count
     }
     
     var sectionType = CharacterSectionType.info

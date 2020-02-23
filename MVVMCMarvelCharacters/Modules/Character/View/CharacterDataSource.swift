@@ -17,6 +17,7 @@ class CharacterDataSource: NSObject {
     
     func configure(_ tableView: UITableView) {
         tableView.dataSource = self
+        tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
     }
 }
 
@@ -35,7 +36,7 @@ extension CharacterDataSource: UITableViewDataSource {
         
         switch section.sectionType {
         case .info:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier) as! CharacterInfoCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier, for: indexPath) as! CharacterInfoCell
             cell.configure(vm: section as! CharacterInfoVMP)
             return cell
         default:

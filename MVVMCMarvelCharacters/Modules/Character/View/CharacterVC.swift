@@ -12,10 +12,13 @@ class CharacterVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel: CharacterVMP
+    let dataSource: CharacterDataSource
     
     init(viewModel: CharacterVMP) {
         self.viewModel = viewModel
+        self.dataSource = CharacterDataSource(viewModel: viewModel)
         super.init(nibName: "CharacterVC", bundle: nil)
+        self.title = viewModel.name
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,19 +27,7 @@ class CharacterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dataSource.configure(tableView)
+        tableView.reloadData()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

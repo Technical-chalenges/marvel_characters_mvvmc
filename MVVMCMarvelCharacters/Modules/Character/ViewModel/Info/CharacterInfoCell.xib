@@ -29,12 +29,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-47-HhU">
-                        <rect key="frame" x="16" y="124" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comics:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-Za-mlS">
                         <rect key="frame" x="124" y="45" width="53.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -55,6 +49,12 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZa-sz-Kbu">
                         <rect key="frame" x="185.5" y="69.5" width="10.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-47-HhU">
+                        <rect key="frame" x="16" y="124" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -81,6 +81,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="comicsCountLabel" destination="bNT-gW-NIw" id="wJV-zc-gTu"/>
+                <outlet property="descriptionLabel" destination="o5y-47-HhU" id="ddC-mm-A2g"/>
+                <outlet property="nameLabel" destination="xCd-iP-cFp" id="R8v-Rg-QhV"/>
+                <outlet property="seriesCountLabel" destination="RZa-sz-Kbu" id="YV7-Kh-4FB"/>
+                <outlet property="thumbnailImage" destination="FRo-MN-QOC" id="JMC-Nr-sgb"/>
+            </connections>
             <point key="canvasLocation" x="108.69565217391305" y="197.87946428571428"/>
         </tableViewCell>
     </objects>
