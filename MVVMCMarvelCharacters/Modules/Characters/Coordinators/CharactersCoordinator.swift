@@ -28,7 +28,7 @@ class CharactersCoordinator: Coordinator {
         let charactersVM = CharactersVM(service: characterService)
         charactersVM.charactersCoordinatorDelegate = self
         
-        let charactersVC = CharactersVC.instantiate()
+        let charactersVC = CharactersViewController(viewModel: charactersVM)
         charactersVC.viewModel = charactersVM
         charactersVM.paginableViewDelegate = charactersVC
         navigationController =  UINavigationController(rootViewController: charactersVC)

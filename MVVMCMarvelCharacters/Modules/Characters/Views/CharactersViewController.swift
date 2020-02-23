@@ -8,13 +8,23 @@
 
 import UIKit
 
-class CharactersVC: UIViewController, Storyboarded {
-    static var storyboard = AppStoryboard.characters
+class CharactersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CharactersVMP!
     var tableViewDataSource: CharactersDataSource!
     var tableViewDelegate: InfiniteViewDelegate!
     private var refreshControl = UIRefreshControl()
+    
+    init(viewModel: CharactersVMP) {
+        self.viewModel = viewModel
+        self.tableViewDataSource = CharactersDataSource(viewModel: viewModel)
+        super.init(nibName: "CharactersViewController", bundle: nil)
+        self.title = viewModel.title
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +59,7 @@ class CharactersVC: UIViewController, Storyboarded {
     }
 }
 
-extension CharactersVC: PaginableViewDelegate {
+extension CharactersViewController: PaginableViewDelegate {
     func itemsDidLoad() {
         refreshControl.endRefreshing()
         tableView.reloadData()

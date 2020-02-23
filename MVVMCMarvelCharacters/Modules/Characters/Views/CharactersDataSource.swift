@@ -20,6 +20,8 @@ class CharactersDataSource: NSObject {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        tableView.register(CharacterCell.nib, forCellReuseIdentifier: CharacterCell.identifier)
     }
 }
 
