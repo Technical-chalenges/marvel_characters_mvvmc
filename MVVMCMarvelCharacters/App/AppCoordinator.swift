@@ -1,11 +1,3 @@
-//
-//  AppCoordinator.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 19.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
 import UIKit
 import Moya
 
@@ -27,8 +19,15 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator {
     func showCharacters() {
-        let charactersC = CharactersCoordinator(window: window, apiProvider: apiProvider)
-        coordinators[charactersC_KEY] = charactersC
-        charactersC.start()
+        let charactersCoordinator = CharactersCoordinator(window: window, apiProvider: apiProvider)
+        charactersCoordinator.delegate = self
+        coordinators[charactersC_KEY] = charactersCoordinator
+        charactersCoordinator.start()
+    }
+}
+
+extension AppCoordinator: CharactersCoordinatorDelegate {
+    func didFinish() {
+        coordinators.removeValue(forKey: charactersC_KEY)
     }
 }

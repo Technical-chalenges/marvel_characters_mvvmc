@@ -1,15 +1,6 @@
-//
-//  CharacterViewModel.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 23.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
-
 class CharacterVM: CharacterVMP {
     var character: Character
+    weak var coordinatorDelegate: CharacterCoordinatorViewModelDelegate?
     var name: String? {
         character.name
     }
@@ -29,5 +20,9 @@ class CharacterVM: CharacterVMP {
         sections.append(CharacterInfoVM(character: character))
         sections.append(characterComicsViewModel)
         sections.append(characterSeriesViewModel)
+    }
+    
+    func didFinish() {
+        coordinatorDelegate?.didFinish()
     }
 }

@@ -1,13 +1,3 @@
-//
-//  CharacterComicsVM.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 23.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
-
 class CharacterComicsVM: PaginableVM<Comic>, CharacterComicsVMP {
     var sectionType = CharacterSectionType.comics
     var character: Character

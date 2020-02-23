@@ -1,11 +1,3 @@
-//
-//  ServiceError.swift
-//  characters
-//
-//  Created by Alexandr Fadeev on 16.01.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
 import Foundation
 
 enum ServiceError : Error {

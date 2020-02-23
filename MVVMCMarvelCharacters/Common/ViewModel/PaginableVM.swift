@@ -1,15 +1,5 @@
-//
-//  PaginableVM.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 21.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
-
 class PaginableVM<ModelType>: BaseVM, PaginableVMP {
-    weak var paginableViewDelegate: PaginableViewDelegate?
+    weak var viewDelegate: PaginableViewDelegate?
     
     typealias T = ModelType
     var items: [ModelType]
@@ -31,7 +21,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
         if let totalSize = totalSize, totalSize <= items.count {
-            paginableViewDelegate?.itemsDidLoad()
+            viewDelegate?.itemsDidLoad()
             return
         }
         
@@ -50,7 +40,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
             }
             
             self.isLoading = false
-            self.paginableViewDelegate?.itemsDidLoad()
+            self.viewDelegate?.itemsDidLoad()
         }
     }
 }

@@ -1,11 +1,3 @@
-//
-//  CharactersVC.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 20.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
 import UIKit
 
 class CharactersVC: UIViewController {
@@ -28,6 +20,10 @@ class CharactersVC: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        viewModel.didFinish()
     }
     
     override func viewDidLoad() {

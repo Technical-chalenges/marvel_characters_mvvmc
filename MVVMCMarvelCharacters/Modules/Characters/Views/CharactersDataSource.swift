@@ -1,12 +1,3 @@
-//
-//  CharactersDataSource.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 22.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
 import UIKit
 
 class CharactersDataSource: NSObject {

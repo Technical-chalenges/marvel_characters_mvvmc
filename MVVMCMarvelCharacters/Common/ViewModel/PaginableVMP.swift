@@ -1,15 +1,5 @@
-//
-//  PaginableVMP.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 21.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
-
 protocol PaginableVMP: BaseVMP {
-    var paginableViewDelegate: PaginableViewDelegate? { get }
+    var viewDelegate: PaginableViewDelegate? { get }
     
     associatedtype T
     var items: [T] { get }

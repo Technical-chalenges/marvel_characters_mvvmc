@@ -1,16 +1,6 @@
-//
-//  CharactersVM.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 21.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
-import Foundation
-
 class CharactersVM: PaginableVM<Character>, CharactersVMP {
     var service: CharactersSP
-    weak var charactersCoordinatorDelegate: CharactersCoordinatorDelegate?
+    weak var coordinatorDelegate: CharactersViewModelCoordinatorDelegate?
     
     override var title: String {
         "Characters"
@@ -30,7 +20,11 @@ class CharactersVM: PaginableVM<Character>, CharactersVMP {
     
     func showCharacter(index: Int) {
         let character = items[index]
-        charactersCoordinatorDelegate?.characterDidSelected(charactersViewModel: self, character: character)
+        coordinatorDelegate?.didSelect(viewModel: self, character: character)
+    }
+    
+    func didFinish() {
+        coordinatorDelegate?.didFinish(viewModel: self)
     }
     
     override func loadItems(offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
