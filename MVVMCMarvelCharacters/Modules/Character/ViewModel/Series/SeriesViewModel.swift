@@ -18,6 +18,8 @@ class CharacterSeriesVM: PaginableVM<Series>, CharacterSeriesVMP {
     
     init(character: Character) {
         self.character = character
+        super.init()
+        self.totalSize = character.series?.available
     }
     
     func loadSeries() {

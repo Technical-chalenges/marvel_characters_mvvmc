@@ -10,16 +10,11 @@ import UIKit
 import Kingfisher
 
 class CharacterInfoCell: UITableViewCell {
-    static var nib: UINib = UINib(nibName: CharacterInfoCell.identifier, bundle: nil)
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var comicsCountLabel: UILabel!
     @IBOutlet weak var seriesCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func configure(vm: CharacterInfoVMP) {
         if let url = vm.thumbnail?.url {

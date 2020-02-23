@@ -9,8 +9,8 @@
 import Foundation
 
 class BaseVM: BaseVMP {
-    var viewDelegate: ViewDelegate?
-    var coordinatorDelegate: CoordinatorDelegate?
+    weak var viewDelegate: ViewDelegate?
+    weak var coordinatorDelegate: CoordinatorDelegate?
     
     var title: String {
         ""

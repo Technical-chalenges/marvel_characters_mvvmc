@@ -30,7 +30,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
     
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
-        if let totalSize = totalSize, totalSize >= items.count {
+        if let totalSize = totalSize, totalSize <= items.count {
             paginableViewDelegate?.itemsDidLoad()
             return
         }

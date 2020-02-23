@@ -36,7 +36,7 @@ class CharactersCoordinator: Coordinator {
     }
     
     func showCharacter(character: Character) {
-        let charactersCoordinator = CharacterCoordinator(navigationController: navigationController, character: character)
+        let charactersCoordinator = CharacterCoordinator(navigationController: navigationController, apiProvider: apiProvider, character: character)
         charactersCoordinator.start()
     }
 }

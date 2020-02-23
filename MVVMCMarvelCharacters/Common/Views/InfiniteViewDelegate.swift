@@ -29,6 +29,10 @@ class InfiniteViewDelegate: NSObject {
     func configure(tableView: UITableView) {
         tableView.delegate = self
     }
+    
+    func configure(collectionView: UICollectionView) {
+        collectionView.delegate = self
+    }
 }
 
 extension InfiniteViewDelegate: UITableViewDelegate {
@@ -52,6 +56,13 @@ extension InfiniteViewDelegate: UITableViewDelegate {
                 EndReachedClosure?()
             }
         }
+    }
+}
+
+extension InfiniteViewDelegate: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        rowSelectedClosure?(indexPath)
     }
 }
 

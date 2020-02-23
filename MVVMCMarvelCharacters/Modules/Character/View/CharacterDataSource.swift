@@ -18,6 +18,7 @@ class CharacterDataSource: NSObject {
     func configure(_ tableView: UITableView) {
         tableView.dataSource = self
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
+        tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
     }
 }
 
@@ -38,6 +39,10 @@ extension CharacterDataSource: UITableViewDataSource {
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier, for: indexPath) as! CharacterInfoCell
             cell.configure(vm: section as! CharacterInfoVMP)
+            return cell
+        case .comics:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CharacterComicsCell.identifier, for: indexPath) as! CharacterComicsCell
+            cell.configure(vm: section as! CharacterComicsVMP)
             return cell
         default:
             print("")

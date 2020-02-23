@@ -18,6 +18,8 @@ class CharacterComicsVM: PaginableVM<Comic>, CharacterComicsVMP {
     
     init(character: Character) {
         self.character = character
+        super.init()
+        self.totalSize = character.comics?.available
     }
     
     func loadComics() {
