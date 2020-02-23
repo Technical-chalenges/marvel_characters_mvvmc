@@ -49,4 +49,9 @@ extension CharacterDataSource: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = viewModel.sections[section]
+        return section.sectionTitle
+    }
 }
