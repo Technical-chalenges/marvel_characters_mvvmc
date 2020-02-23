@@ -19,6 +19,7 @@ class CharacterDataSource: NSObject {
         tableView.dataSource = self
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
+        tableView.register(CharacterSeriesCell.nib, forCellReuseIdentifier: CharacterSeriesCell.identifier)
     }
 }
 
@@ -44,9 +45,10 @@ extension CharacterDataSource: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: CharacterComicsCell.identifier, for: indexPath) as! CharacterComicsCell
             cell.configure(vm: section as! CharacterComicsVMP)
             return cell
-        default:
-            print("")
-            return UITableViewCell()
+        case .series:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CharacterSeriesCell.identifier, for: indexPath) as! CharacterSeriesCell
+            cell.configure(vm: section as! CharacterSeriesVMP)
+            return cell
         }
     }
     

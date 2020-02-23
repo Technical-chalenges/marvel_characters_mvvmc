@@ -9,20 +9,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="265" id="KGk-i7-Jjw" customClass="CharacterComicsCell" customModule="MVVMCMarvelCharacters" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CharacterSeriesCell" customModule="MVVMCMarvelCharacters" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mDx-rz-KCc">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-k6-erZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="UX3-Y9-fAl"/>
+                            <constraint firstAttribute="height" constant="200" id="1kq-gK-i4a"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B0a-3q-1Ja">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hdN-7h-mTC">
                             <size key="itemSize" width="200" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,17 +31,17 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mDx-rz-KCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6tM-N6-hXb"/>
-                    <constraint firstAttribute="trailing" secondItem="mDx-rz-KCc" secondAttribute="trailing" id="JfF-Ks-8Qi"/>
-                    <constraint firstItem="mDx-rz-KCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gss-d6-CXG"/>
-                    <constraint firstAttribute="bottom" secondItem="mDx-rz-KCc" secondAttribute="bottom" id="vbI-sK-cea"/>
+                    <constraint firstAttribute="bottom" secondItem="ULb-k6-erZ" secondAttribute="bottom" id="7xM-X4-xno"/>
+                    <constraint firstItem="ULb-k6-erZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H69-tP-1i9"/>
+                    <constraint firstItem="ULb-k6-erZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bDs-eF-8QP"/>
+                    <constraint firstAttribute="trailing" secondItem="ULb-k6-erZ" secondAttribute="trailing" id="pfn-Yu-CCo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="collectionView" destination="mDx-rz-KCc" id="WMj-9D-VOP"/>
+                <outlet property="collectionView" destination="ULb-k6-erZ" id="PxO-Lx-xIx"/>
             </connections>
-            <point key="canvasLocation" x="108.69565217391305" y="133.92857142857142"/>
+            <point key="canvasLocation" x="211.59420289855075" y="163.39285714285714"/>
         </tableViewCell>
     </objects>
 </document>
