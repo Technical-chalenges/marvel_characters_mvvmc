@@ -14,7 +14,7 @@ extension ServiceError: LocalizedError {
         case .decode:
             return NSLocalizedString("Ошибка обработки данных", comment: "")
         case .loading:
-            return NSLocalizedString("Ошибка подключения. Попробуйте повторить поздее", comment: "")
+            return NSLocalizedString("Ошибка подключения. Попробуйте повторить позднее", comment: "")
         }
     }
 }

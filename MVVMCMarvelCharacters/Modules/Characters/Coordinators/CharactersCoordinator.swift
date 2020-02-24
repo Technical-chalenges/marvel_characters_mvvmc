@@ -14,9 +14,10 @@ class CharactersCoordinator: BaseCoordinator {
     
     private func showCharacters() {
         let characterService = CharactersService(provider: apiProvider)
-        let charactersVM = CharactersVM(service: characterService)
+        let charactersVM = CharactersViewModel(service: characterService)
         let charactersVC = CharactersVC(viewModel: charactersVM)
         charactersVM.coordinatorDelegate = self
+        charactersVM.viewDelegate = charactersVC
         charactersVM.paginableViewDelegate = charactersVC
         charactersVC.viewModel = charactersVM
         navigationController.viewControllers = [charactersVC]
@@ -33,7 +34,7 @@ class CharactersCoordinator: BaseCoordinator {
 }
 
 extension CharactersCoordinator: CharactersViewModelCoordinatorDelegate {
-    func didSelect(viewModel: CharactersVMP, character: Character) {
+    func didSelect(viewModel: CharactersViewModelProtocol, character: Character) {
         showCharacter(character: character)
     }
 }

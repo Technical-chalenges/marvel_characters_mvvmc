@@ -17,7 +17,7 @@ class CharacterCoordinator: BaseCoordinator {
     private func showCharacter() {
         let comicsService = ComicsService(provider: apiProvider)
         let seriesService = SeriesService(provider: apiProvider)
-        let viewModel = CharacterVM(
+        let viewModel = CharacterViewModel(
             character: character,
             comicsService: comicsService,
             seriesService: seriesService)

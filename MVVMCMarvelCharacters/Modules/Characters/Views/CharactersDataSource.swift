@@ -1,9 +1,9 @@
 import UIKit
 
 class CharactersDataSource: NSObject {
-    let viewModel: CharactersVMP
+    let viewModel: CharactersViewModelProtocol
     
-    init(viewModel: CharactersVMP) {
+    init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
     }
     

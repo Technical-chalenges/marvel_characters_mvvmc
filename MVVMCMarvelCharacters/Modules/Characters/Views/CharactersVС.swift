@@ -2,18 +2,18 @@ import UIKit
 
 class CharactersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: CharactersVMP
+    var viewModel: CharactersViewModelProtocol
     var tableViewDataSource: CharactersDataSource
     var tableViewDelegate: InfiniteViewDelegate!
     private var refreshControl = UIRefreshControl()
     
-    init(viewModel: CharactersVMP) {
+    init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         tableViewDataSource = CharactersDataSource(viewModel: viewModel)
         tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
         super.init(nibName: "CharacterVC", bundle: nil)
         
-        self.title = viewModel.title
+        title = viewModel.title
         tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
         tableViewDelegate.rowSelectedClosure = showCharacter
     }
@@ -49,5 +49,12 @@ extension CharactersVC: PaginableViewDelegate {
     func itemsDidLoad() {
         refreshControl.endRefreshing()
         tableView.reloadData()
+    }
+}
+
+extension CharactersVC: ViewDelegate {
+    func errorMessageChanged() {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        showAlert("", message: errorMessage)
     }
 }
