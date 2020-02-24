@@ -1,5 +1,5 @@
 class PaginableVM<ModelType>: BaseVM, PaginableVMP {
-    weak var viewDelegate: PaginableViewDelegate?
+    weak var paginableViewDelegate: PaginableViewDelegate?
     
     typealias T = ModelType
     var items: [ModelType]
@@ -21,7 +21,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
         if let totalSize = totalSize, totalSize <= items.count {
-            viewDelegate?.itemsDidLoad()
+            paginableViewDelegate?.itemsDidLoad()
             return
         }
         
@@ -40,7 +40,7 @@ class PaginableVM<ModelType>: BaseVM, PaginableVMP {
             }
             
             self.isLoading = false
-            self.viewDelegate?.itemsDidLoad()
+            self.paginableViewDelegate?.itemsDidLoad()
         }
     }
 }

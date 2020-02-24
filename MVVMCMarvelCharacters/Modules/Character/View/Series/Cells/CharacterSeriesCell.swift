@@ -7,7 +7,7 @@ class CharacterSeriesCell: UITableViewCell {
     var tableViewDelegate: InfiniteViewDelegate!
     func configure(vm: CharacterSeriesVMP) {
         viewModel = vm
-        viewModel.viewDelegate = self
+        viewModel.paginableViewDelegate = self
         initByViewModel()
     }
     

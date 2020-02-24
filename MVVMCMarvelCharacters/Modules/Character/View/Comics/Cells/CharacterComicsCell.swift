@@ -7,7 +7,7 @@ class CharacterComicsCell: UITableViewCell {
     var tableViewDelegate: InfiniteViewDelegate!
     func configure(vm: CharacterComicsVMP) {
         viewModel = vm
-        viewModel.viewDelegate = self
+        viewModel.paginableViewDelegate = self
         initByViewModel()
     }
     

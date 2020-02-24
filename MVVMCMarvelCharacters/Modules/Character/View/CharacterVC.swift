@@ -17,10 +17,6 @@ class CharacterVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        viewModel.didFinish()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.configure(tableView)

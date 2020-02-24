@@ -1,33 +1,31 @@
 import UIKit
 import Moya
 
-class AppCoordinator: Coordinator {
-    fileprivate let charactersC_KEY = "Characters"
-    
-    var window: UIWindow
+class AppCoordinator: BaseCoordinator {
+    var window = UIWindow(frame: UIScreen.main.bounds)
     let apiProvider = MoyaProvider<API>()
-    var coordinators = [String:Coordinator]()
     
     init(window: UIWindow) {
         self.window = window
     }
     
-    func start() {
+    override convenience init() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.init(window: window)
+    }
+    
+    override func start() {
+        self.navigationController = UINavigationController()
+        self.window.rootViewController = self.navigationController
+        self.window.makeKeyAndVisible()
         showCharacters()
     }
 }
 
 extension AppCoordinator {
     func showCharacters() {
-        let charactersCoordinator = CharactersCoordinator(window: window, apiProvider: apiProvider)
-        charactersCoordinator.delegate = self
-        coordinators[charactersC_KEY] = charactersCoordinator
-        charactersCoordinator.start()
-    }
-}
-
-extension AppCoordinator: CharactersCoordinatorDelegate {
-    func didFinish() {
-        coordinators.removeValue(forKey: charactersC_KEY)
+        let charactersCoordinator = CharactersCoordinator(apiProvider: apiProvider)
+        charactersCoordinator.navigationController = navigationController
+        self.start(coordinator: charactersCoordinator)
     }
 }

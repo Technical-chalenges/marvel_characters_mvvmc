@@ -1,5 +1,5 @@
 protocol PaginableVMP: BaseVMP {
-    var viewDelegate: PaginableViewDelegate? { get }
+    var paginableViewDelegate: PaginableViewDelegate? { get }
     
     associatedtype T
     var items: [T] { get }

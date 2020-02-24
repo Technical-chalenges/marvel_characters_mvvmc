@@ -1,6 +1,5 @@
-class CharacterVM: CharacterVMP {
+class CharacterVM: BaseVM, CharacterVMP {
     var character: Character
-    weak var coordinatorDelegate: CharacterCoordinatorViewModelDelegate?
     var name: String? {
         character.name
     }
@@ -20,9 +19,5 @@ class CharacterVM: CharacterVMP {
         sections.append(CharacterInfoVM(character: character))
         sections.append(characterComicsViewModel)
         sections.append(characterSeriesViewModel)
-    }
-    
-    func didFinish() {
-        coordinatorDelegate?.didFinish()
     }
 }

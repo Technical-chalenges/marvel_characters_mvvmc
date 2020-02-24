@@ -22,10 +22,6 @@ class CharactersVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        viewModel.didFinish()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(refreshCharacters(_:)), for: .valueChanged)
