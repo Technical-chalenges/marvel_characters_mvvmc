@@ -12,12 +12,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CharacterSeriesCell" customModule="MVVMCMarvelCharacters" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-k6-erZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <rect key="frame" x="0.0" y="5" width="320" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="1kq-gK-i4a"/>
@@ -31,8 +31,8 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="ULb-k6-erZ" secondAttribute="bottom" id="7xM-X4-xno"/>
-                    <constraint firstItem="ULb-k6-erZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H69-tP-1i9"/>
+                    <constraint firstAttribute="bottom" secondItem="ULb-k6-erZ" secondAttribute="bottom" constant="5" id="7xM-X4-xno"/>
+                    <constraint firstItem="ULb-k6-erZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="H69-tP-1i9"/>
                     <constraint firstItem="ULb-k6-erZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bDs-eF-8QP"/>
                     <constraint firstAttribute="trailing" secondItem="ULb-k6-erZ" secondAttribute="trailing" id="pfn-Yu-CCo"/>
                 </constraints>

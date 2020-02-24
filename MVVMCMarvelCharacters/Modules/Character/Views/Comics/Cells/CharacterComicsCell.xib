@@ -12,12 +12,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="265" id="KGk-i7-Jjw" customClass="CharacterComicsCell" customModule="MVVMCMarvelCharacters" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mDx-rz-KCc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <rect key="frame" x="0.0" y="5" width="320" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="UX3-Y9-fAl"/>
@@ -31,10 +31,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mDx-rz-KCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6tM-N6-hXb"/>
+                    <constraint firstItem="mDx-rz-KCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6tM-N6-hXb"/>
                     <constraint firstAttribute="trailing" secondItem="mDx-rz-KCc" secondAttribute="trailing" id="JfF-Ks-8Qi"/>
                     <constraint firstItem="mDx-rz-KCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gss-d6-CXG"/>
-                    <constraint firstAttribute="bottom" secondItem="mDx-rz-KCc" secondAttribute="bottom" id="vbI-sK-cea"/>
+                    <constraint firstAttribute="bottom" secondItem="mDx-rz-KCc" secondAttribute="bottom" constant="5" id="vbI-sK-cea"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

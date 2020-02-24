@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-PK-wFk">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-PK-wFk">
+                        <rect key="frame" x="0.0" y="44" width="200" height="200"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="r4O-yi-Mxa"/>
                             <constraint firstAttribute="height" constant="200" id="xsA-Bz-kIr"/>
@@ -28,7 +28,7 @@
             <constraints>
                 <constraint firstItem="yYe-PK-wFk" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="P8z-xc-H4t"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="yYe-PK-wFk" secondAttribute="trailing" id="dGH-UL-WiN"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="yYe-PK-wFk" secondAttribute="top" constant="44" id="fdN-WU-TF7"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="yYe-PK-wFk" secondAttribute="top" id="fdN-WU-TF7"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="yYe-PK-wFk" secondAttribute="bottom" id="zoq-Hj-g3F"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
