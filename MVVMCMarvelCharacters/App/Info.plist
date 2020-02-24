@@ -4,10 +4,6 @@
 <dict>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
-	<key>PRIVATE_KEY</key>
-	<string>$(PRIVATE_KEY)</string>
-	<key>PUBLIC_KEY</key>
-	<string>$(PUBLIC_KEY)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -26,6 +22,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>PRIVATE_KEY</key>
+	<string>$(PRIVATE_KEY)</string>
+	<key>PUBLIC_KEY</key>
+	<string>$(PUBLIC_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -66,10 +71,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

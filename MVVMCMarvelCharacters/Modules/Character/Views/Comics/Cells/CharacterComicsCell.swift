@@ -15,7 +15,7 @@ class CharacterComicsCell: UITableViewCell {
         comicsDataSource = ComicsDataSource(viewModel: viewModel)
         comicsDataSource.configure(collectionView)
         
-        tableViewDelegate = InfiniteViewDelegate(direction: .horisontal, sensivity: 0.8)
+        tableViewDelegate = InfiniteViewDelegate(direction: .horisontal, sensivity: 3)
         tableViewDelegate.EndReachedClosure = viewModel.loadComics
         tableViewDelegate.configure(collectionView: collectionView)
         viewModel.loadComics()
@@ -23,6 +23,12 @@ class CharacterComicsCell: UITableViewCell {
 }
 
 extension CharacterComicsCell: PaginableViewDelegate {
+    func loadStarted() {
+    }
+    
+    func loadEnded() {
+    }
+    
     func itemsDidLoad() {
         collectionView.reloadData()
     }

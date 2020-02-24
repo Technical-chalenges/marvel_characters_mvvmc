@@ -15,7 +15,7 @@ class CharacterSeriesCell: UITableViewCell {
         seriesDataSource = SeriesDataSource(viewModel: viewModel)
         seriesDataSource.configure(collectionView)
         
-        tableViewDelegate = InfiniteViewDelegate(direction: .horisontal, sensivity: 0.8)
+        tableViewDelegate = InfiniteViewDelegate(direction: .horisontal, sensivity: 3)
         tableViewDelegate.EndReachedClosure = viewModel.loadSeries
         tableViewDelegate.configure(collectionView: collectionView)
         viewModel.loadSeries()
@@ -23,6 +23,12 @@ class CharacterSeriesCell: UITableViewCell {
 }
 
 extension CharacterSeriesCell: PaginableViewDelegate {
+    func loadStarted() {
+    }
+    
+    func loadEnded() {
+    }
+    
     func itemsDidLoad() {
         collectionView.reloadData()
     }

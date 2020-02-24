@@ -32,6 +32,7 @@ extension InfiniteViewDelegate: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.isDragging else { return }
         switch direction {
         case .horisontal:
             let offsetX = scrollView.contentOffset.x

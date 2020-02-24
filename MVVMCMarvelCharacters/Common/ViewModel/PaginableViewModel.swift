@@ -26,6 +26,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
         }
         
         isLoading = true
+        paginableViewDelegate?.loadStarted()
         let offset = clear ? 0 : items.count
         loadItems(offset: offset, limit: pageSize) { [weak self] result in
             guard let self = self else { return }
@@ -40,6 +41,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
             }
             
             self.isLoading = false
+            self.paginableViewDelegate?.loadEnded()
             self.paginableViewDelegate?.itemsDidLoad()
         }
     }

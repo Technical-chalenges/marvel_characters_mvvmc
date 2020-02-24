@@ -41,6 +41,8 @@
 		A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AE54A023FDC7DD00D3D361 /* LaunchScreen.storyboard */; };
 		A8AE54AD23FDC7DD00D3D361 /* MVVMCMarvelCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE54AC23FDC7DD00D3D361 /* MVVMCMarvelCharactersTests.swift */; };
 		A8AE54B823FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE54B723FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift */; };
+		A8B28FFE2403CC0900BA053E /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B28FFC2403CC0900BA053E /* LoadingCell.swift */; };
+		A8B28FFF2403CC0900BA053E /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B28FFD2403CC0900BA053E /* LoadingCell.xib */; };
 		A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */; };
 		A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */; };
 		A8B5F69723FDD4A800CDC5B4 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */; };
@@ -152,6 +154,8 @@
 		A8AE54B323FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCMarvelCharactersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AE54B723FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCMarvelCharactersUITests.swift; sourceTree = "<group>"; };
 		A8AE54B923FDC7DD00D3D361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8B28FFC2403CC0900BA053E /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		A8B28FFD2403CC0900BA053E /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				A87EF15D23FF434900C71ED8 /* ViewDelegate.swift */,
 				A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */,
 				A8BA82E62401707A00710080 /* InfiniteViewDelegate.swift */,
+				A8B28FFC2403CC0900BA053E /* LoadingCell.swift */,
+				A8B28FFD2403CC0900BA053E /* LoadingCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -793,6 +799,7 @@
 				A8F342D6240308A500D2DCE9 /* SeriesCollectionViewCell.xib in Resources */,
 				A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */,
 				A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */,
+				A8B28FFF2403CC0900BA053E /* LoadingCell.xib in Resources */,
 				A8BA831A240290FF00710080 /* CharacterInfoCell.xib in Resources */,
 				A8AE549F23FDC7DD00D3D361 /* Assets.xcassets in Resources */,
 				A8BA83282402AB9E00710080 /* ComicsCollectionViewCell.xib in Resources */,
@@ -986,6 +993,7 @@
 				A8BA83002402830F00710080 /* CharacterInfoViewModel.swift in Sources */,
 				A8F342DE24030A8C00D2DCE9 /* CharacterCell.swift in Sources */,
 				A8BA82FD240282F300710080 /* CharacterInfoViewModelProtocol.swift in Sources */,
+				A8B28FFE2403CC0900BA053E /* LoadingCell.swift in Sources */,
 				A8BA83272402AB9E00710080 /* ComicsCollectionViewCell.swift in Sources */,
 				A83D258923FF2DA50086ED13 /* MoyaService.swift in Sources */,
 			);
@@ -1164,12 +1172,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883M88478B;
 				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.marvel.MVVMCMarvelCharacters;
+				PRODUCT_BUNDLE_IDENTIFIER = krista.iMonitoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1182,12 +1191,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883M88478B;
 				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.marvel.MVVMCMarvelCharacters;
+				PRODUCT_BUNDLE_IDENTIFIER = krista.iMonitoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

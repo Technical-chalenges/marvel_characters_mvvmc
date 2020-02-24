@@ -1,7 +1,6 @@
-protocol CharactersViewModelProtocol: BaseViewModelProtocol {
+protocol CharactersViewModelProtocol: PaginableViewModel<Character> {
     var coordinatorDelegate: CharactersViewModelCoordinatorDelegate? { get }
     var service: CharactersServiceProtocol { get }
-    var items: [Character] { get }
     func loadCharacters()
     func reloadCharacters()
     func showCharacter(index: Int)

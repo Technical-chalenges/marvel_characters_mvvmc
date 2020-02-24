@@ -10,7 +10,7 @@ class CharactersVC: UIViewController {
     init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         tableViewDataSource = CharactersDataSource(viewModel: viewModel)
-        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 0.8)
+        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 1)
         super.init(nibName: "CharacterVC", bundle: nil)
         
         title = viewModel.title
@@ -33,6 +33,7 @@ class CharactersVC: UIViewController {
         
         tableViewDataSource.configure(tableView: tableView)
         tableViewDelegate.configure(tableView: tableView)
+        viewModel.loadCharacters()
     }
     
     func showCharacter(indexPath: IndexPath) {
@@ -46,8 +47,15 @@ class CharactersVC: UIViewController {
 }
 
 extension CharactersVC: PaginableViewDelegate {
-    func itemsDidLoad() {
+    func loadStarted() {
+        tableView.reloadSections(IndexSet.init(integer: CharactersDataSource.loadingSectionIndex), with: .automatic)
+    }
+    
+    func loadEnded() {
         refreshControl.endRefreshing()
+    }
+    
+    func itemsDidLoad() {
         tableView.reloadData()
     }
 }
