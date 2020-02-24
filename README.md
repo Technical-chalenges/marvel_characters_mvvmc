@@ -1,7 +1,5 @@
 # marvel_characters_mvvmc
 
-пример mvvmc
-
 Для работы приложения в папку `MVVMCMarvelCharacters/Configs`
 необходимо добавить 2 файла конфигурации `Development.xcconfig` и `Release.xcconfig`.
 В каждом файле необходимо добавить 3 переменные:
