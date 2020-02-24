@@ -10,6 +10,7 @@ class CharacterDataSource: NSObject {
     func configure(_ tableView: UITableView) {
         tableView.dataSource = self
         tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
         tableView.register(CharacterInfoDescriptionlessCell.nib, forCellReuseIdentifier: CharacterInfoDescriptionlessCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)

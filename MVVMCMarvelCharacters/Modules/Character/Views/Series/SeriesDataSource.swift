@@ -9,6 +9,7 @@ class SeriesDataSource: NSObject {
     
     func configure(_ collectionView: UICollectionView) {
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(SeriesCollectionViewCell.nib, forCellWithReuseIdentifier: SeriesCollectionViewCell.identifier)
     }
 }
