@@ -19,9 +19,9 @@ class CharactersCoordinator: BaseCoordinator {
         characterService = CharactersService(provider: apiProvider)
         charactersVM = CharactersViewModel(service: characterService)
         charactersVC = CharactersVC(viewModel: charactersVM)
-        charactersVM.coordinatorDelegate = self
+        charactersVM.charactersCoordinatorDelegate = self
         charactersVM.viewDelegate = charactersVC
-        charactersVM.paginableViewDelegate = charactersVC
+        charactersVM.loadableViewDelegate = charactersVC
         charactersVC.viewModel = charactersVM
         navigationController.viewControllers = [charactersVC]
     }

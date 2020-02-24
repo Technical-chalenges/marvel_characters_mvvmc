@@ -1,5 +1,5 @@
 protocol PaginableViewModelProtocol: BaseViewModelProtocol {
-    var paginableViewDelegate: PaginableViewDelegate? { get }
+    var loadableViewDelegate: LoadableViewDelegate? { get }
     
     associatedtype T
     var items: [T] { get }

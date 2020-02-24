@@ -2,20 +2,21 @@ import UIKit
 
 class CharacterSeriesCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: CharacterSeriesViewModelProtocol!
-    var seriesDataSource: SeriesDataSource!
-    var tableViewDelegate: InfiniteViewDelegate!
-    func configure(vm: CharacterSeriesViewModelProtocol) {
-        viewModel = vm
-        viewModel.viewDelegate = self
-        initByViewModel()
+    var viewModel: CharacterSeriesViewModelProtocol? {
+        didSet {
+            initByViewModel()
+        }
     }
     
+    var seriesDataSource: SeriesDataSource!
+    var tableViewDelegate: InfiniteCollectionViewDelegate!
+    
     private func initByViewModel() {
+        guard var viewModel = viewModel else { return }
+        viewModel.viewDelegate = self
         seriesDataSource = SeriesDataSource(viewModel: viewModel)
         seriesDataSource.configure(collectionView)
-        
-        tableViewDelegate = InfiniteViewDelegate(direction: .horisontal, sensivity: 3)
+        tableViewDelegate = InfiniteCollectionViewDelegate(direction: .horisontal, sensivity: 3)
         tableViewDelegate.EndReachedClosure = viewModel.loadSeries
         tableViewDelegate.configure(collectionView: collectionView)
         viewModel.loadSeries()
@@ -23,10 +24,10 @@ class CharacterSeriesCell: UITableViewCell {
 }
 
 extension CharacterSeriesCell: ViewDelegate {
-    func errorMessageChanged() {
-    }
-    
     func refreshView() {
         collectionView.reloadData()
+    }
+    
+    func errorMessageChanged() {
     }
 }

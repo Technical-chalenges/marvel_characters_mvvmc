@@ -1,6 +1,6 @@
 import UIKit
 
-class InfiniteViewDelegate: NSObject {
+class InfiniteCollectionViewDelegate: NSObject {
     enum Direction {
         case horisontal
         case vertical
@@ -26,7 +26,7 @@ class InfiniteViewDelegate: NSObject {
     }
 }
 
-extension InfiniteViewDelegate: UITableViewDelegate {
+extension InfiniteCollectionViewDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         rowSelectedClosure?(indexPath)
     }
@@ -50,7 +50,7 @@ extension InfiniteViewDelegate: UITableViewDelegate {
     }
 }
 
-extension InfiniteViewDelegate: UICollectionViewDelegate {
+extension InfiniteCollectionViewDelegate: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         rowSelectedClosure?(indexPath)
     }

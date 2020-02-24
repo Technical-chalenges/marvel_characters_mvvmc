@@ -34,20 +34,20 @@ extension CharacterDataSource: UITableViewDataSource {
             let viewModel = section as! CharacterInfoViewModelProtocol
             if viewModel.description != "" {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier, for: indexPath) as! CharacterInfoCell
-                cell.configure(vm: viewModel)
+                cell.viewModel = viewModel
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoDescriptionlessCell.identifier, for: indexPath) as! CharacterInfoDescriptionlessCell
-                cell.configure(vm: viewModel)
+                cell.viewModel = viewModel
                 return cell
             }
         case .comics:
             let cell = tableView.dequeueReusableCell(withIdentifier: CharacterComicsCell.identifier, for: indexPath) as! CharacterComicsCell
-            cell.configure(vm: section as! CharacterComicsViewModelProtocol)
+            cell.viewModel = section as? CharacterComicsViewModelProtocol
             return cell
         case .series:
             let cell = tableView.dequeueReusableCell(withIdentifier: CharacterSeriesCell.identifier, for: indexPath) as! CharacterSeriesCell
-            cell.configure(vm: section as! CharacterSeriesViewModelProtocol)
+            cell.viewModel = section as? CharacterSeriesViewModelProtocol
             return cell
         }
     }

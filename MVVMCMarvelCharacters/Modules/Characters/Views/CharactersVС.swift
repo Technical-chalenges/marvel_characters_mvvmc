@@ -4,13 +4,13 @@ class CharactersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CharactersViewModelProtocol
     var tableViewDataSource: CharactersDataSource
-    var tableViewDelegate: InfiniteViewDelegate!
+    var tableViewDelegate: InfiniteCollectionViewDelegate!
     private var refreshControl = UIRefreshControl()
     
     init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         tableViewDataSource = CharactersDataSource(viewModel: viewModel)
-        tableViewDelegate = InfiniteViewDelegate(direction: .vertical, sensivity: 1)
+        tableViewDelegate = InfiniteCollectionViewDelegate(direction: .vertical, sensivity: 1)
         super.init(nibName: "CharacterVC", bundle: nil)
         
         title = viewModel.title
@@ -46,7 +46,7 @@ class CharactersVC: UIViewController {
     }
 }
 
-extension CharactersVC: PaginableViewDelegate {
+extension CharactersVC: LoadableViewDelegate {
     func loadStarted() {
         tableView.reloadSections(IndexSet.init(integer: CharactersDataSource.loadingSectionIndex), with: .automatic)
     }

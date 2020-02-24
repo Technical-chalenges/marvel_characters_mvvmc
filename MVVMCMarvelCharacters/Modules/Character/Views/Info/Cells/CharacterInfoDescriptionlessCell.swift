@@ -1,11 +1,3 @@
-//
-//  CharacterInfoDescriptionlessCell.swift
-//  MVVMCMarvelCharacters
-//
-//  Created by Alexandr on 24.02.2020.
-//  Copyright © 2020 Alexandr. All rights reserved.
-//
-
 import UIKit
 
 class CharacterInfoDescriptionlessCell: UITableViewCell {
@@ -13,11 +5,17 @@ class CharacterInfoDescriptionlessCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var comicsCountLabel: UILabel!
     @IBOutlet weak var seriesCountLabel: UILabel!
+    var viewModel: CharacterInfoViewModelProtocol? {
+        didSet {
+            initByViewModel()
+        }
+    }
     
-    func configure(vm: CharacterInfoViewModelProtocol) {
-        thumbnailImage.byUrl(url: vm.thumbnail?.url, placeholder: "character_placeholder")
-        nameLabel.text = vm.name
-        comicsCountLabel.text = String(vm.totalComics)
-        seriesCountLabel.text = String(vm.totalSeries)
+    private func initByViewModel() {
+        guard let viewModel = viewModel else { return }
+        thumbnailImage.byUrl(url: viewModel.thumbnail?.url, placeholder: "character_placeholder")
+        nameLabel.text = viewModel.name
+        comicsCountLabel.text = String(viewModel.totalComics)
+        seriesCountLabel.text = String(viewModel.totalSeries)
     }
 }

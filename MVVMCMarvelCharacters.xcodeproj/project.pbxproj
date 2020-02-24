@@ -29,7 +29,7 @@
 		A87EF16223FF443100C71ED8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16123FF443100C71ED8 /* BaseViewModel.swift */; };
 		A87EF16423FFEB6E00C71ED8 /* PaginableViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16323FFEB6E00C71ED8 /* PaginableViewModelProtocol.swift */; };
 		A87EF16623FFEBE100C71ED8 /* PaginableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16523FFEBE100C71ED8 /* PaginableViewModel.swift */; };
-		A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */; };
+		A87EF16823FFECC600C71ED8 /* LoadableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16723FFECC600C71ED8 /* LoadableViewDelegate.swift */; };
 		A87EF16A23FFF44A00C71ED8 /* CharactersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF16923FFF44A00C71ED8 /* CharactersServiceProtocol.swift */; };
 		A87EF171240013E800C71ED8 /* UITableViewCell+Identifier+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EF170240013E800C71ED8 /* UITableViewCell+Identifier+nib.swift */; };
 		A8939F1F2403C66900FCD440 /* CharactersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8939F1C2403C66900FCD440 /* CharactersViewModelProtocol.swift */; };
@@ -51,7 +51,7 @@
 		A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */; };
 		A8B5F69723FDD4A800CDC5B4 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */; };
 		A8BA82E52401696100710080 /* CharactersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82E42401696100710080 /* CharactersDataSource.swift */; };
-		A8BA82E72401707A00710080 /* InfiniteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82E62401707A00710080 /* InfiniteViewDelegate.swift */; };
+		A8BA82E72401707A00710080 /* InfiniteCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82E62401707A00710080 /* InfiniteCollectionViewDelegate.swift */; };
 		A8BA82EB2401739500710080 /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82EA2401739500710080 /* CharacterCoordinator.swift */; };
 		A8BA82F02402779400710080 /* CharacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA82EE2402779400710080 /* CharacterVC.swift */; };
 		A8BA82F12402779400710080 /* CharacterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BA82EF2402779400710080 /* CharacterVC.xib */; };
@@ -140,7 +140,7 @@
 		A87EF16123FF443100C71ED8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A87EF16323FFEB6E00C71ED8 /* PaginableViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableViewModelProtocol.swift; sourceTree = "<group>"; };
 		A87EF16523FFEBE100C71ED8 /* PaginableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableViewModel.swift; sourceTree = "<group>"; };
-		A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableViewDelegate.swift; sourceTree = "<group>"; };
+		A87EF16723FFECC600C71ED8 /* LoadableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewDelegate.swift; sourceTree = "<group>"; };
 		A87EF16923FFF44A00C71ED8 /* CharactersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersServiceProtocol.swift; sourceTree = "<group>"; };
 		A87EF170240013E800C71ED8 /* UITableViewCell+Identifier+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier+nib.swift"; sourceTree = "<group>"; };
 		A8939F1C2403C66900FCD440 /* CharactersViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
 		A8BA82E42401696100710080 /* CharactersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataSource.swift; sourceTree = "<group>"; };
-		A8BA82E62401707A00710080 /* InfiniteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewDelegate.swift; sourceTree = "<group>"; };
+		A8BA82E62401707A00710080 /* InfiniteCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		A8BA82EA2401739500710080 /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
 		A8BA82EE2402779400710080 /* CharacterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterVC.swift; sourceTree = "<group>"; };
 		A8BA82EF2402779400710080 /* CharacterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterVC.xib; sourceTree = "<group>"; };
@@ -266,6 +266,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A812629D24044879004C14A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE549E23FDC7DD00D3D361 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A812629E240448B6004C14A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A8B28FFC2403CC0900BA053E /* LoadingCell.swift */,
+				A8B28FFD2403CC0900BA053E /* LoadingCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A83D258323FF2C7C0086ED13 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				A87EF14523FF329E00C71ED8 /* Character.swift */,
+				A87EF14723FF32C700C71ED8 /* ComicList.swift */,
+				A87EF14A23FF32C700C71ED8 /* SeriesList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,11 +352,10 @@
 		A87EF15523FF388A00C71ED8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A812629E240448B6004C14A5 /* Cells */,
 				A87EF15D23FF434900C71ED8 /* ViewDelegate.swift */,
-				A87EF16723FFECC600C71ED8 /* PaginableViewDelegate.swift */,
-				A8BA82E62401707A00710080 /* InfiniteViewDelegate.swift */,
-				A8B28FFC2403CC0900BA053E /* LoadingCell.swift */,
-				A8B28FFD2403CC0900BA053E /* LoadingCell.xib */,
+				A87EF16723FFECC600C71ED8 /* LoadableViewDelegate.swift */,
+				A8BA82E62401707A00710080 /* InfiniteCollectionViewDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +420,7 @@
 			children = (
 				A8DD038F23FF1E0000F2AD10 /* Configs */,
 				A8B5F68923FDC88200CDC5B4 /* App */,
+				A812629D24044879004C14A5 /* Resources */,
 				A83D258A23FF2F970086ED13 /* Common */,
 				A83D258323FF2C7C0086ED13 /* Network */,
 				A8B5F68A23FDC9B800CDC5B4 /* Modules */,
@@ -432,9 +451,7 @@
 		A8B5F68923FDC88200CDC5B4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				A8AE549E23FDC7DD00D3D361 /* Assets.xcassets */,
 				A8AE54A023FDC7DD00D3D361 /* LaunchScreen.storyboard */,
-				A8AE54A323FDC7DD00D3D361 /* Info.plist */,
 				A8AE549523FDC7D900D3D361 /* AppDelegate.swift */,
 				A8AE549723FDC7D900D3D361 /* SceneDelegate.swift */,
 				A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */,
@@ -550,8 +567,6 @@
 		A8BA83042402851900710080 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A87EF14723FF32C700C71ED8 /* ComicList.swift */,
-				A87EF14A23FF32C700C71ED8 /* SeriesList.swift */,
 				A87EF14823FF32C700C71ED8 /* Series.swift */,
 				A87EF14923FF32C700C71ED8 /* Comic.swift */,
 			);
@@ -657,9 +672,10 @@
 		A8DD038F23FF1E0000F2AD10 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE54A323FDC7DD00D3D361 /* Info.plist */,
 				A8DD039023FF1E0000F2AD10 /* Environment.swift */,
-				A8DD039123FF1E0000F2AD10 /* Release.xcconfig */,
 				A8DD039223FF1E0000F2AD10 /* Development.xcconfig */,
+				A8DD039123FF1E0000F2AD10 /* Release.xcconfig */,
 				A8DD039323FF1E0000F2AD10 /* Template.xcconfig */,
 			);
 			path = Configs;
@@ -954,7 +970,7 @@
 				A8BA8306240285AE00710080 /* CharacterComicsViewModel.swift in Sources */,
 				A87EF15C23FF396C00C71ED8 /* BaseViewModelProtocol.swift in Sources */,
 				A87EF171240013E800C71ED8 /* UITableViewCell+Identifier+nib.swift in Sources */,
-				A87EF16823FFECC600C71ED8 /* PaginableViewDelegate.swift in Sources */,
+				A87EF16823FFECC600C71ED8 /* LoadableViewDelegate.swift in Sources */,
 				A83D258123FF2C6A0086ED13 /* API.swift in Sources */,
 				A8BA82F02402779400710080 /* CharacterVC.swift in Sources */,
 				A8BA82E52401696100710080 /* CharactersDataSource.swift in Sources */,
@@ -984,7 +1000,7 @@
 				A8AE549623FDC7D900D3D361 /* AppDelegate.swift in Sources */,
 				A8939F232403C72C00FCD440 /* UIViewController+Alert.swift in Sources */,
 				A8939F1F2403C66900FCD440 /* CharactersViewModelProtocol.swift in Sources */,
-				A8BA82E72401707A00710080 /* InfiniteViewDelegate.swift in Sources */,
+				A8BA82E72401707A00710080 /* InfiniteCollectionViewDelegate.swift in Sources */,
 				A8BA8319240290FF00710080 /* CharacterInfoCell.swift in Sources */,
 				A8BA82F324027A0600710080 /* CharacterDataSource.swift in Sources */,
 				A8F342D924030A2B00D2DCE9 /* CharactersVС.swift in Sources */,
@@ -1189,7 +1205,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883M88478B;
-				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
+				INFOPLIST_FILE = MVVMCMarvelCharacters/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1208,7 +1224,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883M88478B;
-				INFOPLIST_FILE = MVVMCMarvelCharacters/App/Info.plist;
+				INFOPLIST_FILE = MVVMCMarvelCharacters/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
