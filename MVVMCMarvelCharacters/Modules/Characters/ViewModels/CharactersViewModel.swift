@@ -36,7 +36,7 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
         case .success(let character):
             guard let index = self.items.firstIndex(where: {$0.id == character.id }) else { return }
             self.items[index] = character
-            self.paginableViewDelegate?.itemsDidChanged()
+            self.viewDelegate?.refreshView()
         case .failure(let error):
             self.errorMessage = error.localizedDescription
         }

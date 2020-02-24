@@ -1,5 +1,5 @@
 class BaseViewModel: BaseViewModelProtocol {
-    var viewDelegate: ViewDelegate?
+    weak var viewDelegate: ViewDelegate?
     var title: String {
         ""
     }

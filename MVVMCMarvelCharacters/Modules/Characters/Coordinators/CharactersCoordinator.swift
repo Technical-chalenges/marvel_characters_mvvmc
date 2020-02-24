@@ -4,6 +4,9 @@ import Moya
 
 class CharactersCoordinator: BaseCoordinator {
     let apiProvider: MoyaProvider<API>
+    var characterService: CharactersService!
+    var charactersVM: CharactersViewModel!
+    var charactersVC: CharactersVC!
     init(apiProvider: MoyaProvider<API>) {
         self.apiProvider = apiProvider
     }
@@ -13,9 +16,9 @@ class CharactersCoordinator: BaseCoordinator {
     }
     
     private func showCharacters() {
-        let characterService = CharactersService(provider: apiProvider)
-        let charactersVM = CharactersViewModel(service: characterService)
-        let charactersVC = CharactersVC(viewModel: charactersVM)
+        characterService = CharactersService(provider: apiProvider)
+        charactersVM = CharactersViewModel(service: characterService)
+        charactersVC = CharactersVC(viewModel: charactersVM)
         charactersVM.coordinatorDelegate = self
         charactersVM.viewDelegate = charactersVC
         charactersVM.paginableViewDelegate = charactersVC
@@ -29,7 +32,17 @@ class CharactersCoordinator: BaseCoordinator {
             character: character)
         
         characterCoordinator.navigationController = navigationController
+        characterCoordinator.characterCoordinatorDelegate = self
         start(coordinator: characterCoordinator)
+    }
+}
+
+extension CharactersCoordinator: CharacterCoordinatorDelegate {
+    func characterStateChanged(character: Character) {
+        var items = charactersVM.items
+        guard let index = items.firstIndex(where: {$0.id == character.id}) else { return }
+        items[index] = character
+        charactersVM.items = items
     }
 }
 

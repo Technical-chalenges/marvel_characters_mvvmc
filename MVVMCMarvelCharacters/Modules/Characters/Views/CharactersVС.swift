@@ -56,11 +56,14 @@ extension CharactersVC: PaginableViewDelegate {
     }
     
     func itemsDidChanged() {
-        tableView.reloadData()
     }
 }
 
 extension CharactersVC: ViewDelegate {
+    func refreshView() {
+        tableView.reloadData()
+    }
+    
     func errorMessageChanged() {
         guard let errorMessage = viewModel.errorMessage else { return }
         showAlert("", message: errorMessage)

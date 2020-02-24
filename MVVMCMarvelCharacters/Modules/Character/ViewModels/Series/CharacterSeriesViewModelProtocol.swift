@@ -1,5 +1,4 @@
-protocol CharacterSeriesViewModelProtocol: CharacterRepresentable {
-    var paginableViewDelegate: PaginableViewDelegate? { get set }
+protocol CharacterSeriesViewModelProtocol: BaseViewModelProtocol, CharacterRepresentable {
     var service: SeriesServiceProtocol? { get }
     var items: [Series] { get }
     

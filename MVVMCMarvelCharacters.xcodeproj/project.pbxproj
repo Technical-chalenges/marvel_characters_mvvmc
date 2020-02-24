@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4B9EF750733806E5732F9A7A /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FBCE4BD5A92E71A2E9147 /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework */; };
 		A02A2D081B45BE1BEEFD3E2E /* Pods_MVVMCMarvelCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232CCE3E84E834225424494A /* Pods_MVVMCMarvelCharactersTests.framework */; };
+		A812629A2404038D004C14A5 /* CharacterViewModelCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81262992404038D004C14A5 /* CharacterViewModelCoordinatorDelegate.swift */; };
+		A812629C24040480004C14A5 /* CharacterCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A812629B24040480004C14A5 /* CharacterCoordinatorDelegate.swift */; };
 		A83D258123FF2C6A0086ED13 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D258023FF2C6A0086ED13 /* API.swift */; };
 		A83D258623FF2CA90086ED13 /* StringMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D258523FF2CA90086ED13 /* StringMD5.swift */; };
 		A83D258923FF2DA50086ED13 /* MoyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D258823FF2DA50086ED13 /* MoyaService.swift */; };
@@ -118,6 +120,8 @@
 		533CE7E5339AC434509C4D2B /* Pods-MVVMCMarvelCharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharactersTests.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharactersTests/Pods-MVVMCMarvelCharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCMarvelCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50A069A1831C9A609241AA7 /* Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.debug.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A81262992404038D004C14A5 /* CharacterViewModelCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		A812629B24040480004C14A5 /* CharacterCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		A83D258023FF2C6A0086ED13 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API/API.swift; sourceTree = "<group>"; };
 		A83D258523FF2CA90086ED13 /* StringMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMD5.swift; sourceTree = "<group>"; };
 		A83D258823FF2DA50086ED13 /* MoyaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaService.swift; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BA82EA2401739500710080 /* CharacterCoordinator.swift */,
+				A812629B24040480004C14A5 /* CharacterCoordinatorDelegate.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				A8BA82F424027A9200710080 /* CharacterViewModel.swift */,
 				A8BA82F82402816B00710080 /* CharacterRepresentable.swift */,
 				A8BA82FA240281D800710080 /* CharacterSectionType.swift */,
+				A81262992404038D004C14A5 /* CharacterViewModelCoordinatorDelegate.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -941,6 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83D258F23FF2F970086ED13 /* ServiceError.swift in Sources */,
+				A812629C24040480004C14A5 /* CharacterCoordinatorDelegate.swift in Sources */,
 				A8BA83092402869800710080 /* ComicsServiceProtocol.swift in Sources */,
 				A83D259523FF30430086ED13 /* Image.swift in Sources */,
 				A87EF16423FFEB6E00C71ED8 /* PaginableViewModelProtocol.swift in Sources */,
@@ -968,6 +975,7 @@
 				A8BA83202402A4C100710080 /* CharacterComicsCell.swift in Sources */,
 				A87EF14D23FF32C800C71ED8 /* Comic.swift in Sources */,
 				A8BA82F724027AA700710080 /* CharacterViewModelProtocol.swift in Sources */,
+				A812629A2404038D004C14A5 /* CharacterViewModelCoordinatorDelegate.swift in Sources */,
 				A87EF15E23FF434900C71ED8 /* ViewDelegate.swift in Sources */,
 				A8BA831424028C3600710080 /* SeriesServiceProtocol.swift in Sources */,
 				A8BA83032402848F00710080 /* CharacterComicsViewModelProtocol.swift in Sources */,

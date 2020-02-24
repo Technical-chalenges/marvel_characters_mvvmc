@@ -2,7 +2,11 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
     weak var paginableViewDelegate: PaginableViewDelegate?
     
     typealias T = ModelType
-    var items: [ModelType]
+    var items: [ModelType] {
+        didSet {
+            viewDelegate?.refreshView()
+        }
+    }
     var pageSize: Int
     var totalSize: Int?
     var isLoading: Bool
@@ -21,7 +25,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
         if let totalSize = totalSize, totalSize <= items.count {
-            paginableViewDelegate?.itemsDidChanged()
+            viewDelegate?.refreshView()
             return
         }
         
@@ -42,7 +46,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
             
             self.isLoading = false
             self.paginableViewDelegate?.loadEnded()
-            self.paginableViewDelegate?.itemsDidChanged()
+            self.viewDelegate?.refreshView()
         }
     }
 }

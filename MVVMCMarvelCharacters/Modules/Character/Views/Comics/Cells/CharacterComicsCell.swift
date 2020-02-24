@@ -7,7 +7,7 @@ class CharacterComicsCell: UITableViewCell {
     var tableViewDelegate: InfiniteViewDelegate!
     func configure(vm: CharacterComicsViewModelProtocol) {
         viewModel = vm
-        viewModel.paginableViewDelegate = self
+        viewModel.viewDelegate = self
         initByViewModel()
     }
     
@@ -22,14 +22,11 @@ class CharacterComicsCell: UITableViewCell {
     }
 }
 
-extension CharacterComicsCell: PaginableViewDelegate {
-    func loadStarted() {
-    }
-    
-    func loadEnded() {
-    }
-    
-    func itemsDidChanged() {
+extension CharacterComicsCell: ViewDelegate {
+    func refreshView() {
         collectionView.reloadData()
+    }
+    
+    func errorMessageChanged() {
     }
 }
