@@ -88,5 +88,5 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-characters/Configs/Development.xcconfig
-characters/Configs/Release.xcconfig
+MVVMCMarvelCharacters/Configs/Development.xcconfig
+MVVMCMarvelCharacters/Configs/Release.xcconfig
