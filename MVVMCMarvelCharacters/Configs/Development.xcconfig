@@ -1,6 +1,0 @@
-// Configuration settings file format documentation can be found at:
-// https://help.apple.com/xcode/#/dev745c5c974
-#include "Pods/Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.debug.xcconfig"
-BASE_URL = https:/$()/gateway.marvel.com/v1/public
-PRIVATE_KEY = 68f5fdf8967c43693f0128c998a66d694fd0dad0
-PUBLIC_KEY = 7441bf2b36060983fd33c847c06242d3
