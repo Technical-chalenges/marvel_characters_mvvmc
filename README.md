@@ -1,6 +1,6 @@
 # marvel_characters_mvvmc
 
-this repo shows mvvm with coordinators
+пример mvvmc
 
 Для работы приложения в папку `MVVMCMarvelCharacters/Configs`
 необходимо добавить 2 файла конфигурации `Development.xcconfig` и `Release.xcconfig`.
