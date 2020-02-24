@@ -54,9 +54,6 @@ extension CharactersVC: PaginableViewDelegate {
     func loadEnded() {
         refreshControl.endRefreshing()
     }
-    
-    func itemsDidChanged() {
-    }
 }
 
 extension CharactersVC: ViewDelegate {
