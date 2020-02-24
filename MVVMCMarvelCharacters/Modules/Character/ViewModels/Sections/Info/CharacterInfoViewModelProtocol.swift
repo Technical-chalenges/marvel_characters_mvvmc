@@ -1,4 +1,4 @@
-protocol CharacterInfoViewModelProtocol: CharacterRepresentable {
+protocol CharacterInfoViewModelProtocol: CharacterSectionProtocol {
     var thumbnail: Image? { get }
     var name: String? { get }
     var description: String? { get }

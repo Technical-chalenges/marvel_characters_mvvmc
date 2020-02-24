@@ -1,7 +1,7 @@
 class CharacterSeriesViewModel: PaginableViewModel<Series>, CharacterSeriesViewModelProtocol {
     var sectionType = CharacterSectionType.series
     var character: Character
-    var service: SeriesServiceProtocol?
+    var service: CharacterSeriesServiceProtocol?
     var sectionTitle: String? {
         "series"
     }

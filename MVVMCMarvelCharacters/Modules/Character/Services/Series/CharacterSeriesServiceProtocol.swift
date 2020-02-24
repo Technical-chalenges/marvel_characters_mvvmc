@@ -1,3 +1,3 @@
-protocol SeriesServiceProtocol {
+protocol CharacterSeriesServiceProtocol {
     func fetchSeries(characterId: Int, offset: Int, limit: Int, _ completion: @escaping (Result<[Series], ServiceError>) -> Void)
 }

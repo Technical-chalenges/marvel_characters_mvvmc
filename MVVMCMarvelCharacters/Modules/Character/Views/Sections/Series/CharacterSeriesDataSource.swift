@@ -1,6 +1,6 @@
 import UIKit
 
-class SeriesDataSource: NSObject {
+class CharacterSeriesDataSource: NSObject {
     let viewModel: CharacterSeriesViewModelProtocol
     
     init(viewModel: CharacterSeriesViewModelProtocol) {
@@ -14,7 +14,7 @@ class SeriesDataSource: NSObject {
     }
 }
 
-extension SeriesDataSource: UICollectionViewDataSource {
+extension CharacterSeriesDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.items.count
     }

@@ -1,29 +1,29 @@
 import UIKit
 
-class CharacterComicsCell: UITableViewCell {
+class CharacterSeriesCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: CharacterComicsViewModelProtocol? {
+    var viewModel: CharacterSeriesViewModelProtocol? {
         didSet {
             initByViewModel()
         }
     }
     
-    var comicsDataSource: ComicsDataSource!
+    var seriesDataSource: CharacterSeriesDataSource!
     var tableViewDelegate: InfiniteCollectionViewDelegate!
     
     private func initByViewModel() {
         guard var viewModel = viewModel else { return }
         viewModel.viewDelegate = self
-        comicsDataSource = ComicsDataSource(viewModel: viewModel)
-        comicsDataSource.configure(collectionView)
+        seriesDataSource = CharacterSeriesDataSource(viewModel: viewModel)
+        seriesDataSource.configure(collectionView)
         tableViewDelegate = InfiniteCollectionViewDelegate(direction: .horisontal, sensivity: 3)
-        tableViewDelegate.EndReachedClosure = viewModel.loadComics
+        tableViewDelegate.EndReachedClosure = viewModel.loadSeries
         tableViewDelegate.configure(collectionView: collectionView)
-        viewModel.loadComics()
+        viewModel.loadSeries()
     }
 }
 
-extension CharacterComicsCell: ViewDelegate {
+extension CharacterSeriesCell: ViewDelegate {
     func refreshView() {
         collectionView.reloadData()
     }

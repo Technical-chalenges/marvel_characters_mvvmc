@@ -1,7 +1,7 @@
 class CharacterComicsViewModel: PaginableViewModel<Comic>, CharacterComicsViewModelProtocol {
     var sectionType = CharacterSectionType.comics
     var character: Character
-    var service: ComicsServiceProtocol?
+    var service: CharacterComicsServiceProtocol?
     var sectionTitle: String? {
         "comics"
     }

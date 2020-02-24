@@ -1,8 +1,8 @@
 class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     weak var characterCoordinatorDelegate: CharacterViewModelCoordinatorDelegate?
     var charactersService: CharactersServiceProtocol
-    var comicsService: ComicsServiceProtocol
-    var seriesService: SeriesServiceProtocol
+    var comicsService: CharacterComicsServiceProtocol
+    var seriesService: CharacterSeriesServiceProtocol
     var character: Character {
         didSet {
             updateViewModel()
@@ -14,17 +14,17 @@ class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
         character.name
     }
     
-    var sections: [CharacterRepresentable]
+    var sections: [CharacterSectionProtocol]
     
     init(
         character: Character,
         charactersService: CharactersServiceProtocol,
-        comicsService: ComicsServiceProtocol,
-        seriesService: SeriesServiceProtocol) {
+        comicsService: CharacterComicsServiceProtocol,
+        seriesService: CharacterSeriesServiceProtocol) {
         self.charactersService = charactersService
         self.comicsService = comicsService
         self.seriesService = seriesService
-        self.sections = [CharacterRepresentable]()
+        self.sections = [CharacterSectionProtocol]()
         self.character = character
         super.init()
         self.updateViewModel()
