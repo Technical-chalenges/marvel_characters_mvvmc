@@ -11,11 +11,11 @@ class CharacterDataSource: NSObject {
         tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
+        tableView.register(CharacterInfoDescriptionlessCell.nib, forCellReuseIdentifier: CharacterInfoDescriptionlessCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
         tableView.register(CharacterSeriesCell.nib, forCellReuseIdentifier: CharacterSeriesCell.identifier)
     }
 }
-
 
 extension CharacterDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,9 +30,16 @@ extension CharacterDataSource: UITableViewDataSource {
         let section = viewModel.sections[indexPath.section]
         switch section.sectionType {
         case .info:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier, for: indexPath) as! CharacterInfoCell
-            cell.configure(vm: section as! CharacterInfoViewModelProtocol)
-            return cell
+            let viewModel = section as! CharacterInfoViewModelProtocol
+            if viewModel.description != "" {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoCell.identifier, for: indexPath) as! CharacterInfoCell
+                cell.configure(vm: viewModel)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoDescriptionlessCell.identifier, for: indexPath) as! CharacterInfoDescriptionlessCell
+                cell.configure(vm: viewModel)
+                return cell
+            }
         case .comics:
             let cell = tableView.dequeueReusableCell(withIdentifier: CharacterComicsCell.identifier, for: indexPath) as! CharacterComicsCell
             cell.configure(vm: section as! CharacterComicsViewModelProtocol)

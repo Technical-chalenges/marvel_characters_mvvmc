@@ -43,6 +43,8 @@
 		A8AE54B823FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE54B723FDC7DD00D3D361 /* MVVMCMarvelCharactersUITests.swift */; };
 		A8B28FFE2403CC0900BA053E /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B28FFC2403CC0900BA053E /* LoadingCell.swift */; };
 		A8B28FFF2403CC0900BA053E /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B28FFD2403CC0900BA053E /* LoadingCell.xib */; };
+		A8B290042403DE4400BA053E /* CharacterInfoDescriptionlessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B290022403DE4400BA053E /* CharacterInfoDescriptionlessCell.swift */; };
+		A8B290052403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B290032403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib */; };
 		A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */; };
 		A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */; };
 		A8B5F69723FDD4A800CDC5B4 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */; };
@@ -156,6 +158,8 @@
 		A8AE54B923FDC7DD00D3D361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8B28FFC2403CC0900BA053E /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		A8B28FFD2403CC0900BA053E /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		A8B290022403DE4400BA053E /* CharacterInfoDescriptionlessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoDescriptionlessCell.swift; sourceTree = "<group>"; };
+		A8B290032403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterInfoDescriptionlessCell.xib; sourceTree = "<group>"; };
 		A8B5F68F23FDCA0200CDC5B4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A8B5F69123FDCA7800CDC5B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A8B5F69623FDD4A800CDC5B4 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
@@ -600,6 +604,8 @@
 			children = (
 				A8BA8317240290FF00710080 /* CharacterInfoCell.swift */,
 				A8BA8318240290FF00710080 /* CharacterInfoCell.xib */,
+				A8B290022403DE4400BA053E /* CharacterInfoDescriptionlessCell.swift */,
+				A8B290032403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -800,6 +806,7 @@
 				A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */,
 				A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */,
 				A8B28FFF2403CC0900BA053E /* LoadingCell.xib in Resources */,
+				A8B290052403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib in Resources */,
 				A8BA831A240290FF00710080 /* CharacterInfoCell.xib in Resources */,
 				A8AE549F23FDC7DD00D3D361 /* Assets.xcassets in Resources */,
 				A8BA83282402AB9E00710080 /* ComicsCollectionViewCell.xib in Resources */,
@@ -954,6 +961,7 @@
 				A8B5F69023FDCA0200CDC5B4 /* Coordinator.swift in Sources */,
 				A87EF14623FF329E00C71ED8 /* Character.swift in Sources */,
 				A87EF14C23FF32C800C71ED8 /* Series.swift in Sources */,
+				A8B290042403DE4400BA053E /* CharacterInfoDescriptionlessCell.swift in Sources */,
 				A8B5F69223FDCA7800CDC5B4 /* AppCoordinator.swift in Sources */,
 				A83D259323FF30430086ED13 /* DataWrapper.swift in Sources */,
 				A83D259423FF30430086ED13 /* DataContainer.swift in Sources */,

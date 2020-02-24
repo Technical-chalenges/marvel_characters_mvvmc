@@ -9,15 +9,19 @@ class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     init(character: Character, comicsService: ComicsServiceProtocol, seriesService: SeriesServiceProtocol) {
         self.character = character
         
-        let characterComicsViewModel = CharacterComicsViewModel(character: character)
-        characterComicsViewModel.service = comicsService
-        
-        let characterSeriesViewModel = CharacterSeriesViewModel(character: character)
-        characterSeriesViewModel.service = seriesService
-        
         sections = [CharacterRepresentable]()
         sections.append(CharacterInfoViewModel(character: character))
-        sections.append(characterComicsViewModel)
-        sections.append(characterSeriesViewModel)
+        
+        if let comicsCount = character.comics?.available, comicsCount > 0 {
+            let characterComicsViewModel = CharacterComicsViewModel(character: character)
+            characterComicsViewModel.service = comicsService
+            sections.append(characterComicsViewModel)
+        }
+        
+        if let seriesCount = character.series?.available, seriesCount > 0 {
+            let characterSeriesViewModel = CharacterSeriesViewModel(character: character)
+            characterSeriesViewModel.service = seriesService
+            sections.append(characterSeriesViewModel)
+        }
     }
 }
