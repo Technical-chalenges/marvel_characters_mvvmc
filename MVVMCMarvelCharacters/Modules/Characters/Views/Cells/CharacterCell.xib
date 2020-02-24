@@ -35,27 +35,40 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-zz-sBZ">
+                        <rect key="frame" x="361" y="16" width="20" height="22"/>
+                        <state key="normal" image="favorited"/>
+                        <connections>
+                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JFw-ee-QHc"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="I9x-FD-n3O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="9E8-Lf-dnE"/>
                     <constraint firstItem="LfM-R6-dNu" firstAttribute="leading" secondItem="IQw-ke-5nt" secondAttribute="leading" id="BIs-ee-bWm"/>
                     <constraint firstItem="IQw-ke-5nt" firstAttribute="top" secondItem="I9x-FD-n3O" secondAttribute="top" id="F94-Ip-qLb"/>
                     <constraint firstItem="LfM-R6-dNu" firstAttribute="top" secondItem="IQw-ke-5nt" secondAttribute="bottom" constant="7.5" id="Ipb-Jk-kVr"/>
+                    <constraint firstItem="k5S-zz-sBZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="LGZ-la-HWh"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="I9x-FD-n3O" secondAttribute="bottom" constant="16" id="Q3C-va-hoe"/>
                     <constraint firstItem="IQw-ke-5nt" firstAttribute="leading" secondItem="I9x-FD-n3O" secondAttribute="trailing" constant="22" id="boc-r1-7Kg"/>
+                    <constraint firstItem="k5S-zz-sBZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IQw-ke-5nt" secondAttribute="trailing" constant="16" id="h7X-7t-KAs"/>
+                    <constraint firstAttribute="trailing" secondItem="k5S-zz-sBZ" secondAttribute="trailing" constant="16" id="hee-ox-FUM"/>
                     <constraint firstItem="I9x-FD-n3O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="pfd-cc-XJf"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LfM-R6-dNu" secondAttribute="bottom" constant="16" id="ttK-4z-QdS"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IQw-ke-5nt" secondAttribute="trailing" constant="16" id="uVx-RK-TM9"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LfM-R6-dNu" secondAttribute="trailing" constant="16" id="wDh-Bk-bPr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="LfM-R6-dNu" id="h2i-d4-YYt"/>
+                <outlet property="favoriteButton" destination="k5S-zz-sBZ" id="MwC-p5-gzX"/>
                 <outlet property="nameLabel" destination="IQw-ke-5nt" id="cAT-JZ-yrY"/>
                 <outlet property="thumbnail" destination="I9x-FD-n3O" id="rSW-bW-KIW"/>
             </connections>
             <point key="canvasLocation" x="193.47826086956522" y="148.66071428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favorited" width="20" height="20"/>
+    </resources>
 </document>

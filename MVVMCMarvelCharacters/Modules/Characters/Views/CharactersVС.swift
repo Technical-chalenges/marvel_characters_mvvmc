@@ -55,7 +55,7 @@ extension CharactersVC: PaginableViewDelegate {
         refreshControl.endRefreshing()
     }
     
-    func itemsDidLoad() {
+    func itemsDidChanged() {
         tableView.reloadData()
     }
 }

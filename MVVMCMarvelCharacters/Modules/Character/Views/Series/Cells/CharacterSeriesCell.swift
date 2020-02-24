@@ -29,7 +29,7 @@ extension CharacterSeriesCell: PaginableViewDelegate {
     func loadEnded() {
     }
     
-    func itemsDidLoad() {
+    func itemsDidChanged() {
         collectionView.reloadData()
     }
 }

@@ -1,5 +1,5 @@
 protocol PaginableViewDelegate: AnyObject {
     func loadStarted()
     func loadEnded()
-    func itemsDidLoad()
+    func itemsDidChanged()
 }

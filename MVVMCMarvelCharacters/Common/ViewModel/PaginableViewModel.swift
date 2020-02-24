@@ -21,7 +21,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
     func loadMoreItems(clear: Bool = false) {
         guard !isLoading else { return }
         if let totalSize = totalSize, totalSize <= items.count {
-            paginableViewDelegate?.itemsDidLoad()
+            paginableViewDelegate?.itemsDidChanged()
             return
         }
         
@@ -42,7 +42,7 @@ class PaginableViewModel<ModelType>: BaseViewModel, PaginableViewModelProtocol {
             
             self.isLoading = false
             self.paginableViewDelegate?.loadEnded()
-            self.paginableViewDelegate?.itemsDidLoad()
+            self.paginableViewDelegate?.itemsDidChanged()
         }
     }
 }

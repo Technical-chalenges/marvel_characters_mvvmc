@@ -4,4 +4,6 @@ protocol CharactersViewModelProtocol: PaginableViewModel<Character> {
     func loadCharacters()
     func reloadCharacters()
     func showCharacter(index: Int)
+    func addToFavorite(character: Character)
+    func removeFromFavorite(character: Character)
 }

@@ -50,7 +50,9 @@ extension CharactersDataSource: UITableViewDataSource {
             for: indexPath
         ) as! CharacterCell
         
-        cell.configure(character: model)
+        cell.character = model
+        cell.addToFavorite = viewModel.addToFavorite
+        cell.removeFromFavorite = viewModel.removeFromFavorite
 
         return cell
     }
