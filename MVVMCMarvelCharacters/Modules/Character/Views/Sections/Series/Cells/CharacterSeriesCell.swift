@@ -8,8 +8,8 @@ class CharacterSeriesCell: UITableViewCell {
         }
     }
     
-    var seriesDataSource: CharacterSeriesDataSource!
-    var tableViewDelegate: InfiniteCollectionViewDelegate!
+    private var seriesDataSource: CharacterSeriesDataSource!
+    private var tableViewDelegate: InfiniteCollectionViewDelegate!
     
     private func initByViewModel() {
         guard var viewModel = viewModel else { return }

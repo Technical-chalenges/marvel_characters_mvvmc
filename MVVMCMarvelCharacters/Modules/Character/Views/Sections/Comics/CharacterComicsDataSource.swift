@@ -1,8 +1,7 @@
 import UIKit
 
 class CharacterComicsDataSource: NSObject {
-    let viewModel: CharacterComicsViewModelProtocol
-    
+    private let viewModel: CharacterComicsViewModelProtocol
     init(viewModel: CharacterComicsViewModelProtocol) {
         self.viewModel = viewModel
     }
