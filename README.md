@@ -1,7 +1,7 @@
 # marvel_characters_mvvmc
 
 Для работы приложения в папке `MVVMCMarvelCharacters/Configs`
-в файлах `Development.xcconfig` или `Release.xcconfig` (зависит от сборки дебаг или релиз, можно сразу оба) необходимо раскомментировать: 
+в файлах `Development.xcconfig` или `Release.xcconfig` (зависит от сборки дебаг или релиз, можно сразу в обоих) необходимо раскомментировать: 
 
 `PUBLIC_KEY = 00000000000000000000000000000000` - публичный ключ и 
 
