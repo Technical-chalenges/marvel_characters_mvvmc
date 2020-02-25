@@ -5,12 +5,13 @@ class CharactersVC: UIViewController {
     private var viewModel: CharactersViewModelProtocol
     private var tableViewDataSource: CharactersDataSource
     private var tableViewDelegate: InfiniteCollectionViewDelegate
-    private var refreshControl = UIRefreshControl()
+    private var refreshControl: UIRefreshControl
     
     init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         tableViewDataSource = CharactersDataSource(viewModel: viewModel)
         tableViewDelegate = InfiniteCollectionViewDelegate(direction: .vertical, sensivity: 1)
+        refreshControl = UIRefreshControl()
         super.init(nibName: "CharacterVC", bundle: nil)
         
         title = viewModel.title
@@ -41,7 +42,7 @@ class CharactersVC: UIViewController {
         viewModel.showCharacter(index: indexPath.row)
     }
     
-    @objc private func refreshCharacters(_ sender: Any) {
+    @objc func refreshCharacters(_ sender: Any) {
         viewModel.reloadCharacters()
     }
 }
