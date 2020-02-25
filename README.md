@@ -1,14 +1,12 @@
 # marvel_characters_mvvmc
 
-Для работы приложения в папку `MVVMCMarvelCharacters/Configs`
-необходимо добавить 2 файла конфигурации `Development.xcconfig` и `Release.xcconfig`.
-В каждом файле необходимо добавить 3 переменные:
+Для работы приложения в папке `MVVMCMarvelCharacters/Configs`
+в файлах `Development.xcconfig` или `Release.xcconfig` (зависит от сборки дебаг или релиз) необходимо раскомментировать 
 
-`BASE_URL = https:/$()/gateway.marvel.com/v1/public` - урл до апи марвела
+`PUBLIC_KEY = 00000000000000000000000000000000` - публичный ключ, выданный на сайте марвела
+и 
 
-`PRIVATE_KEY = ` - приватный ключ, выданный на сайте марвела
-
-`PUBLIC_KEY = ` - публичный ключ, выданный на сайте марвела
-
+`PRIVATE_KEY = 0000000000000000000000000000000000000000` - приватный ключ, выданный на сайте марвела
+Оба ключа можно получить на сайте https://developer.marvel.com/account
 # Не забудь подтянуть поды
 `pod install`
