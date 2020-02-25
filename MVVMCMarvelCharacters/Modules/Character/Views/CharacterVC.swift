@@ -3,11 +3,10 @@ import CoreGraphics
 
 class CharacterVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    let viewModel: CharacterViewModelProtocol
-    let dataSource: CharacterDataSource
-    let favoriteButton: UIButton
-    let rightBarButton: UIBarButtonItem
+    private let viewModel: CharacterViewModelProtocol
+    private let dataSource: CharacterDataSource
+    private let favoriteButton: UIButton
+    private let rightBarButton: UIBarButtonItem
     
     init(viewModel: CharacterViewModelProtocol) {
         self.viewModel = viewModel

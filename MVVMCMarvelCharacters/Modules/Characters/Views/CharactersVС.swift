@@ -2,9 +2,9 @@ import UIKit
 
 class CharactersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: CharactersViewModelProtocol
-    var tableViewDataSource: CharactersDataSource
-    var tableViewDelegate: InfiniteCollectionViewDelegate!
+    private var viewModel: CharactersViewModelProtocol
+    private var tableViewDataSource: CharactersDataSource
+    private var tableViewDelegate: InfiniteCollectionViewDelegate
     private var refreshControl = UIRefreshControl()
     
     init(viewModel: CharactersViewModelProtocol) {
