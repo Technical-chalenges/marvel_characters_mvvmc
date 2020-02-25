@@ -40,7 +40,7 @@ class CharacterVC: UIViewController {
         }
     }
     
-    @objc func favoriteButtonTapped(sender: UIButton) {
+    @objc private func favoriteButtonTapped(sender: UIButton) {
         guard let isFavorite = viewModel.character.isFavorite else { return }
         if isFavorite {
             viewModel.removeFromFavorite()
