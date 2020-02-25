@@ -79,9 +79,6 @@
 		A8BA832C2402EA5400710080 /* CharacterComicsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA832B2402EA5400710080 /* CharacterComicsDataSource.swift */; };
 		A8BA832E2402F10900710080 /* UICollectionViewCell+Identifier+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA832D2402F10900710080 /* UICollectionViewCell+Identifier+nib.swift */; };
 		A8DD039523FF1E0000F2AD10 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD039023FF1E0000F2AD10 /* Environment.swift */; };
-		A8DD039623FF1E0000F2AD10 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A8DD039123FF1E0000F2AD10 /* Release.xcconfig */; };
-		A8DD039723FF1E0000F2AD10 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A8DD039223FF1E0000F2AD10 /* Development.xcconfig */; };
-		A8DD039823FF1E0000F2AD10 /* Template.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A8DD039323FF1E0000F2AD10 /* Template.xcconfig */; };
 		A8F342CA2403042A00D2DCE9 /* CharacterSeriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342C92403042A00D2DCE9 /* CharacterSeriesDataSource.swift */; };
 		A8F342D12403083500D2DCE9 /* CharacterSeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342CF2403083500D2DCE9 /* CharacterSeriesCell.swift */; };
 		A8F342D22403083500D2DCE9 /* CharacterSeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342D02403083500D2DCE9 /* CharacterSeriesCell.xib */; };
@@ -92,6 +89,8 @@
 		A8F342DE24030A8C00D2DCE9 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342DC24030A8C00D2DCE9 /* CharacterCell.swift */; };
 		A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */; };
 		A8F342F52403AA0200D2DCE9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */; };
+		C9B13B61240559A200D8171D /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B5F240559A200D8171D /* Release.xcconfig */; };
+		C9B13B62240559A200D8171D /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B60240559A200D8171D /* Development.xcconfig */; };
 		F3EACBF1E010C6D3848808FC /* Pods_MVVMCMarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */; };
 /* End PBXBuildFile section */
 
@@ -195,9 +194,6 @@
 		A8BA832B2402EA5400710080 /* CharacterComicsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterComicsDataSource.swift; sourceTree = "<group>"; };
 		A8BA832D2402F10900710080 /* UICollectionViewCell+Identifier+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier+nib.swift"; sourceTree = "<group>"; };
 		A8DD039023FF1E0000F2AD10 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		A8DD039123FF1E0000F2AD10 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		A8DD039223FF1E0000F2AD10 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
-		A8DD039323FF1E0000F2AD10 /* Template.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Template.xcconfig; sourceTree = "<group>"; };
 		A8F342C92403042A00D2DCE9 /* CharacterSeriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesDataSource.swift; sourceTree = "<group>"; };
 		A8F342CF2403083500D2DCE9 /* CharacterSeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesCell.swift; sourceTree = "<group>"; };
 		A8F342D02403083500D2DCE9 /* CharacterSeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterSeriesCell.xib; sourceTree = "<group>"; };
@@ -209,6 +205,8 @@
 		A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C4A78119E4F132D304F5539F /* Pods-MVVMCMarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
+		C9B13B5F240559A200D8171D /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		C9B13B60240559A200D8171D /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		CC0FBCE4BD5A92E71A2E9147 /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1216826112F4A260F90FDB /* Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests/Pods-MVVMCMarvelCharacters-MVVMCMarvelCharactersUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -679,9 +677,8 @@
 			children = (
 				A8AE54A323FDC7DD00D3D361 /* Info.plist */,
 				A8DD039023FF1E0000F2AD10 /* Environment.swift */,
-				A8DD039223FF1E0000F2AD10 /* Development.xcconfig */,
-				A8DD039123FF1E0000F2AD10 /* Release.xcconfig */,
-				A8DD039323FF1E0000F2AD10 /* Template.xcconfig */,
+				C9B13B60240559A200D8171D /* Development.xcconfig */,
+				C9B13B5F240559A200D8171D /* Release.xcconfig */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -824,9 +821,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8DD039823FF1E0000F2AD10 /* Template.xcconfig in Resources */,
 				A8BA83212402A4C100710080 /* CharacterComicsCell.xib in Resources */,
-				A8DD039723FF1E0000F2AD10 /* Development.xcconfig in Resources */,
 				A8BA82F12402779400710080 /* CharacterVC.xib in Resources */,
 				A8F342DA24030A2B00D2DCE9 /* CharactersVC.xib in Resources */,
 				A8F342D6240308A500D2DCE9 /* SeriesCollectionViewCell.xib in Resources */,
@@ -834,10 +829,11 @@
 				A8AE54A223FDC7DD00D3D361 /* LaunchScreen.storyboard in Resources */,
 				A8B28FFF2403CC0900BA053E /* LoadingCell.xib in Resources */,
 				A8B290052403DE4400BA053E /* CharacterInfoDescriptionlessCell.xib in Resources */,
+				C9B13B62240559A200D8171D /* Development.xcconfig in Resources */,
 				A8BA831A240290FF00710080 /* CharacterInfoCell.xib in Resources */,
 				A8AE549F23FDC7DD00D3D361 /* Assets.xcassets in Resources */,
 				A8BA83282402AB9E00710080 /* ComicsCollectionViewCell.xib in Resources */,
-				A8DD039623FF1E0000F2AD10 /* Release.xcconfig in Resources */,
+				C9B13B61240559A200D8171D /* Release.xcconfig in Resources */,
 				A8F342D22403083500D2DCE9 /* CharacterSeriesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1080,7 +1076,7 @@
 /* Begin XCBuildConfiguration section */
 		A8AE54BA23FDC7DD00D3D361 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DD039223FF1E0000F2AD10 /* Development.xcconfig */;
+			baseConfigurationReference = C9B13B60240559A200D8171D /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1141,7 +1137,7 @@
 		};
 		A8AE54BB23FDC7DD00D3D361 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DD039123FF1E0000F2AD10 /* Release.xcconfig */;
+			baseConfigurationReference = C9B13B5F240559A200D8171D /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1196,7 +1192,7 @@
 		};
 		A8AE54BD23FDC7DD00D3D361 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DD039223FF1E0000F2AD10 /* Development.xcconfig */;
+			baseConfigurationReference = C9B13B60240559A200D8171D /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1215,7 +1211,7 @@
 		};
 		A8AE54BE23FDC7DD00D3D361 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DD039123FF1E0000F2AD10 /* Release.xcconfig */;
+			baseConfigurationReference = C9B13B5F240559A200D8171D /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

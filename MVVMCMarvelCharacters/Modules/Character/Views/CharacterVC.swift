@@ -6,13 +6,19 @@ class CharacterVC: UIViewController {
     
     let viewModel: CharacterViewModelProtocol
     let dataSource: CharacterDataSource
-    var favoriteButton: UIButton!
+    let favoriteButton: UIButton
+    let rightBarButton: UIBarButtonItem
     
     init(viewModel: CharacterViewModelProtocol) {
         self.viewModel = viewModel
         self.dataSource = CharacterDataSource(viewModel: viewModel)
+        
+        favoriteButton = UIButton(type: .custom)
+        favoriteButton.frame = CGRect(x: 0.0, y: 0.0, width: 30.0, height: 30.0)
+        rightBarButton = UIBarButtonItem(customView: favoriteButton)
         super.init(nibName: "CharacterVC", bundle: nil)
         self.title = viewModel.name
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -21,15 +27,11 @@ class CharacterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = rightBarButton
+        initFavoriteButton();
+        
         dataSource.configure(tableView)
         tableView.reloadData()
-        
-        favoriteButton = UIButton(type: .custom)
-        favoriteButton.frame = CGRect(x: 0.0, y: 0.0, width: 30.0, height: 30.0)
-        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
-        let barButton = UIBarButtonItem(customView: favoriteButton)
-        navigationItem.rightBarButtonItem = barButton
-        initFavoriteButton();
     }
     
     private func initFavoriteButton() {
@@ -55,6 +57,8 @@ extension CharacterVC: ViewDelegate {
     }
     
     func errorMessageChanged() {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        showAlert("", message: errorMessage)
     }
     
     
