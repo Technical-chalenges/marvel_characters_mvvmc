@@ -1,0 +1,12 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// template file config
+#include "Pods/Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"
+BASE_URL = https:/$()/gateway.marvel.com/v1/public
+// получить публичный и приватный ключ можно здесь https://developer.marvel.com/account
+// PUBLIC_KEY = 00000000000000000000000000000000
+// PRIVATE_KEY = 0000000000000000000000000000000000000000
+
+PUBLIC_KEY = 7441bf2b36060983fd33c847c06242d3
+PRIVATE_KEY = 68f5fdf8967c43693f0128c998a66d694fd0dad0
