@@ -2,11 +2,15 @@ import UIKit
 import Moya
 
 class AppCoordinator: BaseCoordinator {
-    var window = UIWindow(frame: UIScreen.main.bounds)
-    let apiProvider = MoyaProvider<API>()
+    let window: UIWindow
+    let apiProvider : MoyaProvider<API>
+    let slowFPSDetector: SlowFPSDetector
     
     init(window: UIWindow) {
         self.window = window
+        self.apiProvider = MoyaProvider<API>()
+        self.slowFPSDetector = SlowFPSDetector()
+        self.slowFPSDetector.start()
     }
     
     override convenience init() {

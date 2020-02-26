@@ -90,6 +90,7 @@
 		A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */; };
 		A8F342F52403AA0200D2DCE9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */; };
 		C90B82C92406B2BB00857401 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B82C82406B2BB00857401 /* R.generated.swift */; };
+		C9AD69692406B5D900392EB3 /* SlowFPSDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AD69682406B5D900392EB3 /* SlowFPSDetector.swift */; };
 		C9B13B61240559A200D8171D /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B5F240559A200D8171D /* Release.xcconfig */; };
 		C9B13B62240559A200D8171D /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B60240559A200D8171D /* Development.xcconfig */; };
 		F3EACBF1E010C6D3848808FC /* Pods_MVVMCMarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */; };
@@ -207,6 +208,7 @@
 		A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C4A78119E4F132D304F5539F /* Pods-MVVMCMarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
 		C90B82C82406B2BB00857401 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		C9AD69682406B5D900392EB3 /* SlowFPSDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowFPSDetector.swift; sourceTree = "<group>"; };
 		C9B13B5F240559A200D8171D /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C9B13B60240559A200D8171D /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		CC0FBCE4BD5A92E71A2E9147 /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				A83D258523FF2CA90086ED13 /* StringMD5.swift */,
+				C9AD69682406B5D900392EB3 /* SlowFPSDetector.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1041,6 +1044,7 @@
 				A8BA82F524027A9200710080 /* CharacterViewModel.swift in Sources */,
 				A87EF16A23FFF44A00C71ED8 /* CharactersServiceProtocol.swift in Sources */,
 				A87EF14323FF323200C71ED8 /* CharactersService.swift in Sources */,
+				C9AD69692406B5D900392EB3 /* SlowFPSDetector.swift in Sources */,
 				A8BA82F92402816B00710080 /* CharacterSectionProtocol.swift in Sources */,
 				A8BA831224028C1700710080 /* CharacterSeriesService.swift in Sources */,
 				A83D258623FF2CA90086ED13 /* StringMD5.swift in Sources */,
