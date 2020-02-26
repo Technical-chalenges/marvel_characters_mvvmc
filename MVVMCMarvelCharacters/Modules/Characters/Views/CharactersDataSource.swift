@@ -13,7 +13,6 @@ class CharactersDataSource: NSObject {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         tableView.showsVerticalScrollIndicator = false
-        tableView.tableFooterView = UIView()
         
         tableView.register(CharacterCell.nib, forCellReuseIdentifier: CharacterCell.identifier)
         tableView.register(LoadingCell.nib, forCellReuseIdentifier: LoadingCell.identifier)
