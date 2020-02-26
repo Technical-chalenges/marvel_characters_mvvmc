@@ -1,8 +1,8 @@
 class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     weak var characterCoordinatorDelegate: CharacterViewModelCoordinatorDelegate?
-    var charactersService: CharactersServiceProtocol
-    var comicsService: CharacterComicsServiceProtocol
-    var seriesService: CharacterSeriesServiceProtocol
+    let charactersService: CharactersServiceProtocol
+    let comicsService: CharacterComicsServiceProtocol
+    let seriesService: CharacterSeriesServiceProtocol
     var character: Character {
         didSet {
             updateViewModel()

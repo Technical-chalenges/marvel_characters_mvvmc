@@ -1,6 +1,6 @@
 class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelProtocol {
     weak var charactersCoordinatorDelegate: CharactersViewModelCoordinatorDelegate?
-    var charactersService: CharactersServiceProtocol
+    let charactersService: CharactersServiceProtocol
     
     override var title: String {
         "Characters"
