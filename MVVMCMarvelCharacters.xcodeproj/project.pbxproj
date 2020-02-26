@@ -89,6 +89,7 @@
 		A8F342DE24030A8C00D2DCE9 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342DC24030A8C00D2DCE9 /* CharacterCell.swift */; };
 		A8F342DF24030A8C00D2DCE9 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */; };
 		A8F342F52403AA0200D2DCE9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */; };
+		C90B82C92406B2BB00857401 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B82C82406B2BB00857401 /* R.generated.swift */; };
 		C9B13B61240559A200D8171D /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B5F240559A200D8171D /* Release.xcconfig */; };
 		C9B13B62240559A200D8171D /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9B13B60240559A200D8171D /* Development.xcconfig */; };
 		F3EACBF1E010C6D3848808FC /* Pods_MVVMCMarvelCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733353E7751F1861FC2A4D97 /* Pods_MVVMCMarvelCharacters.framework */; };
@@ -205,6 +206,7 @@
 		A8F342DD24030A8C00D2DCE9 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		A8F342F42403AA0200D2DCE9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C4A78119E4F132D304F5539F /* Pods-MVVMCMarvelCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCMarvelCharacters.release.xcconfig"; path = "Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters.release.xcconfig"; sourceTree = "<group>"; };
+		C90B82C82406B2BB00857401 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		C9B13B5F240559A200D8171D /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C9B13B60240559A200D8171D /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		CC0FBCE4BD5A92E71A2E9147 /* Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCMarvelCharacters_MVVMCMarvelCharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +267,7 @@
 		A812629D24044879004C14A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C90B82C82406B2BB00857401 /* R.generated.swift */,
 				A8AE549E23FDC7DD00D3D361 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -720,6 +723,7 @@
 			buildConfigurationList = A8AE54BC23FDC7DD00D3D361 /* Build configuration list for PBXNativeTarget "MVVMCMarvelCharacters" */;
 			buildPhases = (
 				64841853FF42F7A9DFA64B16 /* [CP] Check Pods Manifest.lock */,
+				C90B82C72406AFCC00857401 /* ShellScript */,
 				A8AE548E23FDC7D900D3D361 /* Sources */,
 				A8AE548F23FDC7D900D3D361 /* Frameworks */,
 				A8AE549023FDC7D900D3D361 /* Resources */,
@@ -933,6 +937,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMCMarvelCharacters/Pods-MVVMCMarvelCharacters-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C90B82C72406AFCC00857401 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		F19E6A1BC4F54345FB07352F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,6 +1047,7 @@
 				A87EF14B23FF32C800C71ED8 /* ComicList.swift in Sources */,
 				A8BA83002402830F00710080 /* CharacterInfoViewModel.swift in Sources */,
 				A8F342DE24030A8C00D2DCE9 /* CharacterCell.swift in Sources */,
+				C90B82C92406B2BB00857401 /* R.generated.swift in Sources */,
 				A8BA82FD240282F300710080 /* CharacterInfoViewModelProtocol.swift in Sources */,
 				A8B28FFE2403CC0900BA053E /* LoadingCell.swift in Sources */,
 				A8BA83272402AB9E00710080 /* ComicsCollectionViewCell.swift in Sources */,

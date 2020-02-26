@@ -6,6 +6,7 @@ target 'MVVMCMarvelCharacters' do
   use_frameworks!
   pod 'Moya', '~> 13.0'
   pod 'Kingfisher', '~> 5.0'
+  pod 'R.swift'
 
   # Pods for MVVMCMarvelCharacters
 
