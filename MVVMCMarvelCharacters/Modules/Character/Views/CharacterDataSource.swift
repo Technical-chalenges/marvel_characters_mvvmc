@@ -16,6 +16,7 @@ class CharacterDataSource: NSObject {
         tableView.register(CharacterInfoDescriptionlessCell.nib, forCellReuseIdentifier: CharacterInfoDescriptionlessCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
         tableView.register(CharacterSeriesCell.nib, forCellReuseIdentifier: CharacterSeriesCell.identifier)
+        tableView.tableFooterView = UIView()
     }
 }
 
