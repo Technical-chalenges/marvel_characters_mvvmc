@@ -9,6 +9,9 @@ extension UIImageView {
                 with: url,
                 placeholder: UIImage(named: placeholder),
                 options: [
+                    .processor(DownsamplingImageProcessor(size: self.frame.size)),
+                    .scaleFactor(UIScreen.main.scale),
+                    .cacheOriginalImage,
                     .transition(.fade(0.3))])
         } else {
             self.image = UIImage(named: placeholder)
