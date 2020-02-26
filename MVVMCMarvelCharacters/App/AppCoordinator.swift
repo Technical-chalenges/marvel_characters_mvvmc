@@ -4,9 +4,12 @@ import Moya
 class AppCoordinator: BaseCoordinator {
     var window = UIWindow(frame: UIScreen.main.bounds)
     let apiProvider = MoyaProvider<API>()
+    let fpsSlowDetector: FPSSlowDetector
     
     init(window: UIWindow) {
         self.window = window
+        self.fpsSlowDetector = FPSSlowDetector()
+        fpsSlowDetector.start()
     }
     
     override convenience init() {

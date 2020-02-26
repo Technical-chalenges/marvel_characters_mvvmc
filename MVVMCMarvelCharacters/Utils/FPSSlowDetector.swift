@@ -6,4 +6,29 @@
 //  Copyright © 2020 Alexandr. All rights reserved.
 //
 
-import Foundation
+import QuartzCore
+
+class FPSSlowDetector {
+    private var firstTime: Double = 0.0
+    private var lastTime: Double = 0.0
+    func start() {
+        let link = CADisplayLink(target: self, selector: #selector(FPSSlowDetector.update(link:)))
+        link.add(to:RunLoop.main, forMode: .common)
+    }
+    
+    @objc func update(link: CADisplayLink) {
+        if lastTime == 0.0 {
+            firstTime = link.timestamp
+            lastTime = link.timestamp
+        }
+        
+        let currentTime = link.timestamp
+        let elapsedTime = floor((currentTime - lastTime) * 10_000) / 10
+        
+        if (elapsedTime > 16.7) {
+            print("Frame was dropped with elapsed time of \(elapsedTime)")
+        }
+        
+        lastTime = link.timestamp
+    }
+}
