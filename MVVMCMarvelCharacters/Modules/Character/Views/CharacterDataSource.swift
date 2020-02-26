@@ -8,6 +8,8 @@ class CharacterDataSource: NSObject {
     
     func configure(_ tableView: UITableView) {
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
