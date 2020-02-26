@@ -5,7 +5,7 @@ target 'MVVMCMarvelCharacters' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Moya', '~> 13.0'
-  pod 'Kingfisher', '~> 4.10.1'
+  pod 'Kingfisher', '~> 5.0'
 
   # Pods for MVVMCMarvelCharacters
 
