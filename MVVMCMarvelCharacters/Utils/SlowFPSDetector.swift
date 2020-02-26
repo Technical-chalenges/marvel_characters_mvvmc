@@ -25,7 +25,7 @@ class SlowFPSDetector {
         let currentTime = link.timestamp
         let elapsedTime = floor((currentTime - lastTime) * 10_000)/10
         if elapsedTime > 16.7 {
-            print("Frame was dropped with elapsed time of \(elapsedTime)")
+            // print("Frame was dropped with elapsed time of \(elapsedTime)")
         }
         
         lastTime = link.timestamp

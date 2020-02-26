@@ -14,6 +14,11 @@ class CharacterCell: UITableViewCell {
     var addToFavorite: ((Character) -> Void)?
     var removeFromFavorite: ((Character) -> Void)?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.contentView.autoresizingMask = .flexibleHeight
+    }
+    
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         guard let character = character, let isFavorite = character.isFavorite else { return }
         if  isFavorite {

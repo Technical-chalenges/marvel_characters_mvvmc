@@ -22,7 +22,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="DxL-uk-pux" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="FM6-ag-kWz"/>
+                    <constraint firstItem="DxL-uk-pux" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="b2i-YE-rqt"/>
                     <constraint firstItem="DxL-uk-pux" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="n4O-Ff-M5v"/>
+                    <constraint firstAttribute="bottom" secondItem="DxL-uk-pux" secondAttribute="bottom" constant="12" id="oBn-Zh-2Te"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
