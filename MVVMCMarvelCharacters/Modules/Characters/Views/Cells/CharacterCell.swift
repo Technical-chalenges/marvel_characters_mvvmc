@@ -1,5 +1,4 @@
 import UIKit
-import Kingfisher
 
 class CharacterCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
