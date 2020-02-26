@@ -25,12 +25,12 @@ class CharacterCell: UITableViewCell {
     
     func configure(character: Character?) {
         guard let character = character else { return }
-        thumbnail.byUrl(url: character.thumbnail?.url, placeholder: "character_placeholder")
+        thumbnail.byUrl(url: character.thumbnail?.url, placeholder: R.image.character_placeholder())
         nameLabel.text = character.name
         descriptionLabel.text = character.description
         
         guard let isFavorite = character.isFavorite else { return }
-        let favoriteButtonImage = isFavorite ? "favorited" : "unfavorited"
-        favoriteButton.setImage(UIImage(named: favoriteButtonImage), for: .normal)
+        let favoriteButtonImage = isFavorite ? R.image.favorited() : R.image.unfavorited()
+        favoriteButton.setImage(favoriteButtonImage, for: .normal)
     }
 }

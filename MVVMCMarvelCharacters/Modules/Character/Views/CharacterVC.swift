@@ -34,10 +34,9 @@ class CharacterVC: UIViewController {
     }
     
     private func initFavoriteButton() {
-        let favoriteButtonImage = viewModel.character.isFavorite! ? "favorited" : "unfavorited"
-        if let image = UIImage(named: favoriteButtonImage) {
-            favoriteButton.setImage(image, for: .normal)
-        }
+        guard let isFavorite = viewModel.character.isFavorite else { return }
+        let favoriteButtonImage = isFavorite ? R.image.favorited() : R.image.unfavorited()
+        favoriteButton.setImage(favoriteButtonImage, for: .normal)
     }
     
     @objc private func favoriteButtonTapped(sender: UIButton) {

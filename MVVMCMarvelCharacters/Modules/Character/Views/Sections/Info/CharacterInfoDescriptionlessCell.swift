@@ -13,7 +13,7 @@ class CharacterInfoDescriptionlessCell: UITableViewCell {
     
     private func initByViewModel() {
         guard let viewModel = viewModel else { return }
-        thumbnailImage.byUrl(url: viewModel.thumbnail?.url, placeholder: "character_placeholder")
+        thumbnailImage.byUrl(url: viewModel.thumbnail?.url, placeholder: R.image.character_placeholder())
         nameLabel.text = viewModel.name
         comicsCountLabel.text = String(viewModel.totalComics)
         seriesCountLabel.text = String(viewModel.totalSeries)
