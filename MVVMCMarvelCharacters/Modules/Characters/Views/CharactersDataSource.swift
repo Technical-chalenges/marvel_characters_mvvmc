@@ -11,7 +11,7 @@ class CharactersDataSource: NSObject {
     func configure(tableView: UITableView) {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
         tableView.showsVerticalScrollIndicator = false
         
         tableView.register(CharacterCell.nib, forCellReuseIdentifier: CharacterCell.identifier)
