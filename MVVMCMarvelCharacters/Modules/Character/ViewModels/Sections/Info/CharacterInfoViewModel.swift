@@ -2,9 +2,8 @@ class CharacterInfoViewModel: CharacterInfoViewModelProtocol {
     
     var character: Character
     
-    var sectionTitle: String? {
-        "characterInfo"
-    }
+    var sectionTitle: String?
+    
     var thumbnail: Image? {
         character.thumbnail
     }

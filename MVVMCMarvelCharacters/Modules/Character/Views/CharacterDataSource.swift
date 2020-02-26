@@ -12,11 +12,13 @@ class CharacterDataSource: NSObject {
         tableView.estimatedRowHeight = 120
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        
         tableView.register(CharacterInfoCell.nib, forCellReuseIdentifier: CharacterInfoCell.identifier)
         tableView.register(CharacterInfoDescriptionlessCell.nib, forCellReuseIdentifier: CharacterInfoDescriptionlessCell.identifier)
         tableView.register(CharacterComicsCell.nib, forCellReuseIdentifier: CharacterComicsCell.identifier)
         tableView.register(CharacterSeriesCell.nib, forCellReuseIdentifier: CharacterSeriesCell.identifier)
-        tableView.tableFooterView = UIView()
     }
 }
 
