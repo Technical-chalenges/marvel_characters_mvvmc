@@ -33,8 +33,7 @@ extension CharactersDataSource: UITableViewDataSource {
         
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == CharactersDataSource.loadingSectionIndex {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        if indexPath.section == CharactersDataSource.loadingSectionIndex {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: LoadingCell.identifier,
                 for: indexPath

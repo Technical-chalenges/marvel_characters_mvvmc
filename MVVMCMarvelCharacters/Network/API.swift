@@ -1,7 +1,7 @@
 import Moya
 
 enum API {
-    case characters(offset: Int?, limit: Int?)
+    case characters(nameStartsWith: String?, offset: Int?, limit: Int?)
     case comics(chracterId: Int, offset: Int?, limit: Int?)
     case series(chracterId: Int, offset: Int?, limit: Int?)
 }
@@ -34,8 +34,14 @@ extension API: TargetType {
         params = ["apikey": Environment.publicKey, "ts": ts, "hash": hash]
         
         switch self {
-        case .characters(let offset, let limit),
-             .comics(_, let offset, let limit),
+        case .characters(let nameStartsWith, let offset, let limit):
+            if nameStartsWith != nil, nameStartsWith != "" {
+                params["nameStartsWith"] = nameStartsWith
+            }
+            params["offset"] = offset
+            params["limit"] = limit
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        case .comics(_, let offset, let limit),
              .series(_, let offset, let limit):
             params["offset"] = offset
             params["limit"] = limit

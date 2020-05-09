@@ -1,6 +1,26 @@
+import Dispatch
+
 class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelProtocol {
     weak var charactersCoordinatorDelegate: CharactersViewModelCoordinatorDelegate?
     let charactersService: CharactersServiceProtocol
+    var searchingWorkItem: DispatchWorkItem?
+    var searchCharacterTitle: String? {
+        didSet {
+            searchingWorkItem?.cancel()
+            let currentWorkItem = DispatchWorkItem { [unowned self] in
+                self.reloadCharacters()
+            }
+
+            var delay = 0.2
+            if let searchCharacterTitle = searchCharacterTitle, searchCharacterTitle.isEmpty {
+                delay = 0
+            }
+            searchingWorkItem = currentWorkItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay,
+                                          execute: currentWorkItem)
+        }
+    }
+    
     
     override var title: String {
         "Characters"
@@ -43,6 +63,6 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
     }
     
     override func loadItems(offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
-        charactersService.fetchCharacters(offset: offset, limit: limit, completion)
+        charactersService.fetchCharacters(by: searchCharacterTitle, offset: offset, limit: limit, completion)
     }
 }

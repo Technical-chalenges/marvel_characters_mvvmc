@@ -6,17 +6,15 @@ class CharactersVC: UIViewController {
     private var tableViewDataSource: CharactersDataSource
     private var tableViewDelegate: InfiniteCollectionViewDelegate
     private var refreshControl: UIRefreshControl
+    private var searchController: UISearchController
     
     init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         tableViewDataSource = CharactersDataSource(viewModel: viewModel)
         tableViewDelegate = InfiniteCollectionViewDelegate(direction: .vertical, sensivity: 1)
         refreshControl = UIRefreshControl()
+        searchController = UISearchController(searchResultsController: nil)
         super.init(nibName: "CharacterVC", bundle: nil)
-        
-        title = viewModel.title
-        tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
-        tableViewDelegate.rowSelectedClosure = showCharacter
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,6 +23,8 @@ class CharactersVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel.title
+        
         refreshControl.addTarget(self, action: #selector(refreshCharacters(_:)), for: .valueChanged)
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -34,16 +34,32 @@ class CharactersVC: UIViewController {
         
         tableViewDataSource.configure(tableView: tableView)
         tableViewDelegate.configure(tableView: tableView)
+        
+        tableViewDelegate.EndReachedClosure = viewModel.loadCharacters
+        tableViewDelegate.rowSelectedClosure = showCharacter
+
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "введите имя героя"
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        
         viewModel.loadCharacters()
     }
     
     func showCharacter(indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         viewModel.showCharacter(index: indexPath.row)
     }
     
     @objc func refreshCharacters(_ sender: Any) {
         viewModel.reloadCharacters()
+    }
+}
+
+extension CharactersVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text {
+            viewModel.searchCharacterTitle = text
+        }
     }
 }
 

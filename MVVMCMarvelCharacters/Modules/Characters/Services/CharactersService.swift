@@ -1,8 +1,8 @@
 import Moya
 
 class CharactersService: MoyaService<API>, CharactersServiceProtocol {
-    func fetchCharacters(offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
-        fetch(.characters(offset: offset, limit: limit), completion)
+    func fetchCharacters(by name: String?, offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
+        fetch(.characters(nameStartsWith: name, offset: offset, limit: limit), completion)
     }
     
     func addToFavorite(character: Character, _ completion: @escaping (Result<Character, ServiceError>) -> Void) {
