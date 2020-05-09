@@ -21,7 +21,7 @@ class CharactersCoordinator: BaseCoordinator {
         charactersVC = CharactersVC(viewModel: charactersVM)
         charactersVM.charactersCoordinatorDelegate = self
         charactersVM.viewDelegate = charactersVC
-        charactersVM.loadableViewDelegate = charactersVC
+        charactersVM.paginableViewDelegate = charactersVC
         navigationController.viewControllers = [charactersVC]
     }
     

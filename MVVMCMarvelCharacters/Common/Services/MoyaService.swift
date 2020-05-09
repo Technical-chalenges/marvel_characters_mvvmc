@@ -1,6 +1,6 @@
 import Moya
 
-class MoyaService {
+class MoyaService<API: TargetType> {
     private let provider: MoyaProvider<API>
     
     init(provider: MoyaProvider<API>) {

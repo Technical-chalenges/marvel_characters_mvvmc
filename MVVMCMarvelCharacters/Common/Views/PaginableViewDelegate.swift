@@ -1,4 +1,4 @@
-protocol LoadableViewDelegate: AnyObject {
+protocol PaginableViewDelegate: AnyObject {
     func loadStarted()
     func loadEnded()
 }

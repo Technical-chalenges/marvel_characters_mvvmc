@@ -47,7 +47,7 @@ class CharactersVC: UIViewController {
     }
 }
 
-extension CharactersVC: LoadableViewDelegate {
+extension CharactersVC: PaginableViewDelegate {
     func loadStarted() {
         tableView.reloadSections(IndexSet.init(integer: CharactersDataSource.loadingSectionIndex), with: .automatic)
     }
