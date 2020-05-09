@@ -39,7 +39,7 @@ class CharactersVC: UIViewController {
         tableViewDelegate.rowSelectedClosure = showCharacter
 
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "введите имя героя"
+        searchController.searchBar.placeholder = "имя героя"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         

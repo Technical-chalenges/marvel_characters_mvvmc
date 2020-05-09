@@ -35,7 +35,7 @@ extension API: TargetType {
         
         switch self {
         case .characters(let nameStartsWith, let offset, let limit):
-            if nameStartsWith != nil, nameStartsWith != "" {
+            if let nameStartsWith = nameStartsWith, !nameStartsWith.isEmpty {
                 params["nameStartsWith"] = nameStartsWith
             }
             params["offset"] = offset

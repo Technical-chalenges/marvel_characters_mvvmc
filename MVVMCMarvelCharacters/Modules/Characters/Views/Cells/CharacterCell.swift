@@ -16,6 +16,7 @@ class CharacterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         self.contentView.autoresizingMask = .flexibleHeight
     }
     

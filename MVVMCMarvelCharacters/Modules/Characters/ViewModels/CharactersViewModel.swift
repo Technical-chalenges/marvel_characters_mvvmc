@@ -5,8 +5,10 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
     let charactersService: CharactersServiceProtocol
     var searchingWorkItem: DispatchWorkItem?
     var searchCharacterTitle: String? {
-        didSet {
+        willSet {
+            guard searchCharacterTitle != newValue else { return }
             searchingWorkItem?.cancel()
+
             let currentWorkItem = DispatchWorkItem { [unowned self] in
                 self.reloadCharacters()
             }
@@ -20,7 +22,6 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
                                           execute: currentWorkItem)
         }
     }
-    
     
     override var title: String {
         "Characters"
