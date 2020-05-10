@@ -304,6 +304,7 @@
 		A83D258723FF2DA50086ED13 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A8DF03552467ED750069CBD9 /* Favorites.swift */,
 				A83D258823FF2DA50086ED13 /* MoyaService.swift */,
 			);
 			path = Services;
@@ -476,7 +477,6 @@
 		A8B5F68A23FDC9B800CDC5B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A8DF034F2467ED220069CBD9 /* Favorite */,
 				A8B5F69323FDCD1B00CDC5B4 /* Characters */,
 				A8BA82E82401737300710080 /* Character */,
 			);
@@ -687,54 +687,6 @@
 				C9B13B5F240559A200D8171D /* Release.xcconfig */,
 			);
 			path = Configs;
-			sourceTree = "<group>";
-		};
-		A8DF034F2467ED220069CBD9 /* Favorite */ = {
-			isa = PBXGroup;
-			children = (
-				A8DF03532467ED4A0069CBD9 /* Configurators */,
-				A8DF03542467ED570069CBD9 /* Models */,
-				A8DF03522467ED450069CBD9 /* Services */,
-				A8DF03512467ED330069CBD9 /* ViewModels */,
-				A8DF03502467ED2B0069CBD9 /* Views */,
-			);
-			path = Favorite;
-			sourceTree = "<group>";
-		};
-		A8DF03502467ED2B0069CBD9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A8DF03512467ED330069CBD9 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		A8DF03522467ED450069CBD9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		A8DF03532467ED4A0069CBD9 /* Configurators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Configurators;
-			sourceTree = "<group>";
-		};
-		A8DF03542467ED570069CBD9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A8DF03552467ED750069CBD9 /* Favorites.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A8F342C3240302A400D2DCE9 /* Series */ = {
