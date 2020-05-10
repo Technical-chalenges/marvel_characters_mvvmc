@@ -75,7 +75,9 @@ extension CharactersVC: PaginableViewDelegate {
 
 extension CharactersVC: ViewDelegate {
     func refreshView() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [unowned self] in
+            self.tableView?.reloadData()
+        }
     }
     
     func errorMessageChanged() {

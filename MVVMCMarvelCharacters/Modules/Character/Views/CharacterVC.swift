@@ -34,14 +34,13 @@ class CharacterVC: UIViewController {
     }
     
     private func initFavoriteButton() {
-        guard let isFavorite = viewModel.character.isFavorite else { return }
+        let isFavorite = viewModel.isFavorite()
         let favoriteButtonImage = isFavorite ? R.image.favorited() : R.image.unfavorited()
         favoriteButton.setImage(favoriteButtonImage, for: .normal)
     }
     
     @objc private func favoriteButtonTapped(sender: UIButton) {
-        guard let isFavorite = viewModel.character.isFavorite else { return }
-        if isFavorite {
+        if viewModel.isFavorite() {
             viewModel.removeFromFavorite()
         } else {
             viewModel.addToFavorite()
@@ -51,7 +50,11 @@ class CharacterVC: UIViewController {
 
 extension CharacterVC: ViewDelegate {
     func refreshView() {
-        initFavoriteButton()
+        
+        DispatchQueue.main.async { [unowned self] in
+            self.initFavoriteButton()
+        }
+        
     }
     
     func errorMessageChanged() {

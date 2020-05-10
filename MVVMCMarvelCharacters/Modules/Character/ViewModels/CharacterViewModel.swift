@@ -1,8 +1,11 @@
+import Combine
+
 class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     weak var characterCoordinatorDelegate: CharacterViewModelCoordinatorDelegate?
-    let charactersService: CharactersServiceProtocol
+    let charactersService: CharactersStore
     let comicsService: CharacterComicsServiceProtocol
     let seriesService: CharacterSeriesServiceProtocol
+    let favorites: Favorites
     var character: Character {
         didSet {
             updateViewModel()
@@ -15,19 +18,25 @@ class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     }
     
     var sections: [CharacterSectionProtocol]
+    var favoriteChangedToken: AnyCancellable?
     
     init(
         character: Character,
-        charactersService: CharactersServiceProtocol,
+        charactersService: CharactersStore,
         comicsService: CharacterComicsServiceProtocol,
-        seriesService: CharacterSeriesServiceProtocol) {
+        seriesService: CharacterSeriesServiceProtocol,
+        favorites: Favorites = Favorites()) {
         self.charactersService = charactersService
         self.comicsService = comicsService
         self.seriesService = seriesService
         self.sections = [CharacterSectionProtocol]()
         self.character = character
+        self.favorites = favorites
         super.init()
         self.updateViewModel()
+        favoriteChangedToken = favorites.objectWillChange.sink { [unowned self] _ in
+            self.viewDelegate?.refreshView()
+        }
     }
     
     func updateViewModel() {
@@ -48,11 +57,15 @@ class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
     }
     
     func addToFavorite() {
-        charactersService.addToFavorite(character: character, proccessFavorite)
+        favorites.add(character)
     }
     
     func removeFromFavorite() {
-        charactersService.removeFromFavorite(character: character, proccessFavorite)
+        favorites.remove(character)
+    }
+    
+    func isFavorite() -> Bool {
+        return favorites.contains(character)
     }
     
     private func proccessFavorite(result: Result<Character, ServiceError>) -> Void {
@@ -60,7 +73,6 @@ class CharacterViewModel: BaseViewModel, CharacterViewModelProtocol {
         case .success(let character):
             self.character = character
             viewDelegate?.refreshView()
-            characterCoordinatorDelegate?.characterStateChanged(character: character)
         case .failure(let error):
             self.errorMessage = error.localizedDescription
         }

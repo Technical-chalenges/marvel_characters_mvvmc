@@ -1,9 +1,16 @@
 import Dispatch
+import Combine
 
 class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelProtocol {
     weak var charactersCoordinatorDelegate: CharactersViewModelCoordinatorDelegate?
-    let charactersService: CharactersServiceProtocol
+    let remoteCharactersStore: CharactersStore
+    let favorites: Favorites
     var searchingWorkItem: DispatchWorkItem?
+    
+    override var title: String {
+        "Characters"
+    }
+    
     var searchCharacterTitle: String? {
         willSet {
             guard searchCharacterTitle != newValue else { return }
@@ -14,21 +21,27 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
             }
 
             var delay = 0.2
-            if let searchCharacterTitle = searchCharacterTitle, searchCharacterTitle.isEmpty {
+            if let
+                searchCharacterTitle = searchCharacterTitle,
+                searchCharacterTitle.isEmpty {
                 delay = 0
             }
             searchingWorkItem = currentWorkItem
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay,
-                                          execute: currentWorkItem)
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + delay,
+                execute: currentWorkItem)
         }
     }
     
-    override var title: String {
-        "Characters"
-    }
+    private var favoriteToken: AnyCancellable?
     
-    init(service: CharactersServiceProtocol) {
-        self.charactersService = service
+    init(service: CharactersStore, favorites: Favorites = Favorites()) {
+        self.remoteCharactersStore = service
+        self.favorites = favorites
+        super.init()
+        favoriteToken = favorites.objectWillChange.sink { [unowned self] _ in
+            self.viewDelegate?.refreshView()
+        }
     }
     
     func loadCharacters() {
@@ -44,26 +57,19 @@ class CharactersViewModel: PaginableViewModel<Character>, CharactersViewModelPro
         charactersCoordinatorDelegate?.didSelect(viewModel: self, character: character)
     }
     
+    func isFavorite(_ character: Character) -> Bool {
+        return favorites.contains(character)
+    }
+    
     func addToFavorite(character: Character) {
-        charactersService.addToFavorite(character: character, proccessFavorite)
+        favorites.add(character)
     }
     
     func removeFromFavorite(character: Character) {
-        charactersService.removeFromFavorite(character: character, proccessFavorite)
-    }
-    
-    private func proccessFavorite(result: Result<Character, ServiceError>) -> Void {
-        switch result {
-        case .success(let character):
-            guard let index = self.items.firstIndex(where: {$0.id == character.id }) else { return }
-            self.items[index] = character
-            self.viewDelegate?.refreshView()
-        case .failure(let error):
-            self.errorMessage = error.localizedDescription
-        }
+        favorites.remove(character)
     }
     
     override func loadItems(offset: Int, limit: Int, _ completion: @escaping (Result<[Character], ServiceError>) -> Void) {
-        charactersService.fetchCharacters(by: searchCharacterTitle, offset: offset, limit: limit, completion)
+        remoteCharactersStore.fetchCharacters(by: searchCharacterTitle, offset: offset, limit: limit, completion)
     }
 }

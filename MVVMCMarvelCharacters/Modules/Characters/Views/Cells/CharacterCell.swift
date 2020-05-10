@@ -11,8 +11,9 @@ class CharacterCell: UITableViewCell {
         }
     }
     
-    var addToFavorite: ((Character) -> Void)?
-    var removeFromFavorite: ((Character) -> Void)?
+    var addToFavorite: ((Character) -> Void)!
+    var removeFromFavorite: ((Character) -> Void)!
+    var isFavorite: ((Character) -> Bool)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,11 +22,11 @@ class CharacterCell: UITableViewCell {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
-        guard let character = character, let isFavorite = character.isFavorite else { return }
-        if  isFavorite {
-            removeFromFavorite?(character)
+        guard let character = character else { return }
+        if  isFavorite(character) {
+            removeFromFavorite(character)
         } else {
-            addToFavorite?(character)
+            addToFavorite(character)
         }
     }
     
@@ -35,8 +36,7 @@ class CharacterCell: UITableViewCell {
         nameLabel.text = character.name
         descriptionLabel.text = character.description
         
-        guard let isFavorite = character.isFavorite else { return }
-        let favoriteButtonImage = isFavorite ? R.image.favorited() : R.image.unfavorited()
+        let favoriteButtonImage = isFavorite(character) ? R.image.favorited() : R.image.unfavorited()
         favoriteButton.setImage(favoriteButtonImage, for: .normal)
     }
 }

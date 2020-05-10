@@ -33,7 +33,8 @@ extension CharactersDataSource: UITableViewDataSource {
         
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        if indexPath.section == CharactersDataSource.loadingSectionIndex {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == CharactersDataSource.loadingSectionIndex {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: LoadingCell.identifier,
                 for: indexPath
@@ -49,9 +50,10 @@ extension CharactersDataSource: UITableViewDataSource {
             for: indexPath
         ) as! CharacterCell
         
-        cell.character = model
         cell.addToFavorite = viewModel.addToFavorite
         cell.removeFromFavorite = viewModel.removeFromFavorite
+        cell.isFavorite = viewModel.isFavorite
+        cell.character = model
 
         return cell
     }

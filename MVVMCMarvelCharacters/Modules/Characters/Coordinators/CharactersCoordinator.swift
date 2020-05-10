@@ -4,7 +4,7 @@ import Moya
 
 class CharactersCoordinator: BaseCoordinator {
     let apiProvider: MoyaProvider<API>
-    var characterService: CharactersService!
+    var characterService: RemoteCharactersStore!
     var charactersVM: CharactersViewModel!
     var charactersVC: CharactersVC!
     init(apiProvider: MoyaProvider<API>) {
@@ -16,8 +16,8 @@ class CharactersCoordinator: BaseCoordinator {
     }
     
     private func showCharacters() {
-        characterService = CharactersService(provider: apiProvider)
-        charactersVM = CharactersViewModel(service: characterService)
+        characterService = RemoteCharactersStore(provider: apiProvider)
+        charactersVM = CharactersViewModel(service: characterService, favorites: Favorites.shared)
         charactersVC = CharactersVC(viewModel: charactersVM)
         charactersVM.charactersCoordinatorDelegate = self
         charactersVM.viewDelegate = charactersVC
@@ -31,17 +31,7 @@ class CharactersCoordinator: BaseCoordinator {
             character: character)
         
         characterCoordinator.navigationController = navigationController
-        characterCoordinator.characterCoordinatorDelegate = self
         start(coordinator: characterCoordinator)
-    }
-}
-
-extension CharactersCoordinator: CharacterCoordinatorDelegate {
-    func characterStateChanged(character: Character) {
-        var items = charactersVM.items
-        guard let index = items.firstIndex(where: {$0.id == character.id}) else { return }
-        items[index] = character
-        charactersVM.items = items
     }
 }
 
